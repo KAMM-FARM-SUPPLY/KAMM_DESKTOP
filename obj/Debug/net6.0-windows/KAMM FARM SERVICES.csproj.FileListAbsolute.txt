@@ -1,0 +1,27 @@
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\bin\Debug\net6.0-windows\KAMM FARM SERVICES.exe
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\bin\Debug\net6.0-windows\KAMM FARM SERVICES.deps.json
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\bin\Debug\net6.0-windows\KAMM FARM SERVICES.runtimeconfig.json
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\bin\Debug\net6.0-windows\KAMM FARM SERVICES.dll
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\bin\Debug\net6.0-windows\KAMM FARM SERVICES.pdb
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM FARM SERVICES.csproj.AssemblyReference.cache
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.Form1.resources
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM FARM SERVICES.csproj.GenerateResource.cache
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM FARM SERVICES.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM FARM SERVICES.AssemblyInfoInputs.cache
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM FARM SERVICES.AssemblyInfo.cs
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM FARM SERVICES.csproj.CoreCompileInputs.cache
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM FARM SERVICES.dll
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\refint\KAMM FARM SERVICES.dll
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM FARM SERVICES.pdb
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM FARM SERVICES.genruntimeconfig.cache
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\ref\KAMM FARM SERVICES.dll
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\bin\Debug\net6.0-windows\MaterialSkin.dll
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM FARM SERVICES.csproj.CopyComplete
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.Properties.Resources.resources
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.Overview.resources
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.Farmers.resources
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.FarmerProfile.resources
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.Products.resources
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.frmCategories.resources
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.Location.resources
