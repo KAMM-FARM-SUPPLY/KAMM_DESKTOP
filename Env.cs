@@ -9,7 +9,7 @@ namespace KAMM_FARM_SERVICES
     public static class Env
     {
         public static string live_url = "http://ec2-35-178-100-187.eu-west-2.compute.amazonaws.com";
-        //public static string live_url = "http://192.168.43.90:8000";
+        //public static string live_url = "http://10.10.0.68:8000";
 
 
     }
