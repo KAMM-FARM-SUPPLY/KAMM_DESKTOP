@@ -18,9 +18,31 @@ namespace KAMM_FARM_SERVICES
               int nHeightEllipse
 
            );
+
+        public static System.Drawing.Size PnlContainer;
+
+        public static Farmers FarmersScreen = null;
+
         public Form1()
         {
             InitializeComponent();
+
+
+            System.Drawing.Rectangle workingRectangle =
+                Screen.PrimaryScreen.WorkingArea;
+
+            // Set the size of the form slightly less than size of 
+            // working rectangle.
+
+
+        // Creating overall size to be used for the major form.
+            System.Drawing.Size working_size = new System.Drawing.Size(
+            workingRectangle.Width - 10, workingRectangle.Height - 10);
+
+
+            this.Size = working_size;
+
+            PnlContainer = panel3.Size;
 
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             var materialSkinManager = MaterialSkinManager.Instance;
@@ -50,7 +72,7 @@ namespace KAMM_FARM_SERVICES
 
         private void btnFarmers_Click(object sender, EventArgs e)
         {
-            btnFarmers.BackColor = Color.FromArgb(46, 51, 73);
+            btnDashboard.BackColor = Color.FromArgb(46, 51, 73);
             panel4.Height = btnFarmers.Height;
             panel4.Top = btnFarmers.Top;
             panel4.Left = btnFarmers.Left;
@@ -63,6 +85,8 @@ namespace KAMM_FARM_SERVICES
             form.Show();
             btnFarmers.BackColor = Color.FromArgb(24, 30, 54);
 
+
+            FarmersScreen = form;
 
         }
 
@@ -125,6 +149,27 @@ namespace KAMM_FARM_SERVICES
             //panel4.Top = button4.Top;
             //panel4.Left = button4.Left;
             //button4.BackColor = Color.FromArgb(24, 30, 54);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            button3.BackColor = Color.FromArgb(46, 51, 73);
+            panel4.Height = button3.Height;
+            panel4.Top = button3.Top;
+            panel4.Left = button3.Left;
+            button3.BackColor = Color.FromArgb(24, 30, 54);
+
+            this.panel3.Controls.Clear();
+            Location form = new Location() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            form.FormBorderStyle = FormBorderStyle.None;
+            this.panel3.Controls.Add(form);
+            form.Show();
+            button1.BackColor = Color.FromArgb(24, 30, 54);
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

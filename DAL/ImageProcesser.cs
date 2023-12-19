@@ -63,13 +63,25 @@ namespace KAMM_FARM_SERVICES.DAL
             if (file != "")
             {
                 var wc = new WebClient();
-                Image x = Image.FromStream(wc.OpenRead(file));
-                Image resized = await resizeImage(x, pic_size);
-                if (circled)
+                try
                 {
-                    return await MakeCircleImage(resized);
+                    Image x = Image.FromStream(wc.OpenRead(file));
+                    Image resized = await resizeImage(x, pic_size);
+                    if (circled)
+                    {
+                        return await MakeCircleImage(resized);
+                    }
+                    return resized;
                 }
-                return resized;
+                catch(Exception ex)
+                {
+                    MessageBox.Show("The picture seems to have been deleted on the server");
+                }
+                finally
+                {
+                    
+                }
+                return null;
             }
             else
             {

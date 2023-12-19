@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "iGCxok94V7ifv7JL/iZTr/FOwuvwY+sxvOfG1P2f+18Q1+bYwpkcVbRXFy/eCoOKGbDzgElrfPJmBpHV51/yWQ==",
+  "dgSpecHash": "8epSEUIfgGKPu4TAfrtWBqDVU7sbR8SuDvzZo/q+9CQ81rnJAz131j7aLcJN6ZwRrCTkFCzYs1mVhngjhQjGQA==",
   "success": true,
   "projectFilePath": "C:\\Users\\SHANY\\Desktop\\KAMM-Desktop\\KAMM FARM SERVICES\\KAMM FARM SERVICES.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SHANY\\.nuget\\packages\\materialskin\\0.2.1\\materialskin.0.2.1.nupkg.sha512",
     "C:\\Users\\SHANY\\.nuget\\packages\\materialskin.2\\2.3.1\\materialskin.2.2.3.1.nupkg.sha512",
     "C:\\Users\\SHANY\\.nuget\\packages\\materialskin.updated\\0.2.2\\materialskin.updated.0.2.2.nupkg.sha512",
-    "C:\\Users\\SHANY\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\SHANY\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\SHANY\\.nuget\\packages\\winforms.datavisualization\\1.9.1\\winforms.datavisualization.1.9.1.nupkg.sha512"
   ],
   "logs": [
     {

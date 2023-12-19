@@ -61,11 +61,50 @@ namespace KAMM_FARM_SERVICES.UI
             return null;
         }
 
-        private async void LoadVillageFarmers(string Village , string status_type = null)
+        public void QueryFarmers()
+        {
+            string status;
+            if (materialComboBox1.Text == "Validated")
+            {
+                status = "true";
+            }
+            else if (materialComboBox1.Text == "Pending")
+            {
+                status = "false";
+            }
+            else
+            {
+                status = null;
+                //LoadVillageFarmers(Village.Text);
+                //return;
+            }
+            //LoadVillageFarmers(Village.Text, status.ToString());
+            //MessageBox.Show(Village.Text);
+            if (Village.Text == "All" || Village.Text == "")
+            {
+                //MessageBox.Show("This");
+                LoadVillageFarmers(null, status);
+
+            }
+            else
+            {
+                LoadVillageFarmers(Village.Text, status);
+
+            }
+        }
+
+        private async void LoadVillageFarmers(string Village=null , string status_type = null)
         {
             FarmersDAL farmers = new FarmersDAL();
             //MessageBox.Show(location_results.ToString());
-            dynamic results = await farmers.Fetch(Village , status_type);
+            dynamic results;
+            if (Village == null && status_type == null) {
+                results = await farmers.Fetch();
+            }
+            else
+            {
+                results = await farmers.Fetch(Village, status_type);
+            }
             if (results != null)
             {
                 farmers_hold = results;
@@ -193,8 +232,26 @@ namespace KAMM_FARM_SERVICES.UI
         private async void Farmers_Load(object sender, EventArgs e)
         {
 
-           getFarmers();
-            
+            //getFarmers();
+            LoadVillageFarmers();
+
+            //Loading all the villages
+            LocationsDAL location = new LocationsDAL();
+            dynamic Village_results = await location.Fetch_villages();
+            if (Village_results != null)
+            {
+                Village.Items.Add("All");
+                foreach (dynamic item in Village_results)
+                {
+                    Village.Items.Add(item.name);
+                }
+            }
+            else
+            {
+                MessageBox.Show("An error occured . Try again");
+            }
+
+
         }
 
 
@@ -254,11 +311,11 @@ namespace KAMM_FARM_SERVICES.UI
                     }
                     else
                     {
-                        LoadVillageFarmers(Village.Text);
+                        QueryFarmers();
                         return;
                     }
-
-                    LoadVillageFarmers(Village.Text, status_cb.ToString());
+                    QueryFarmers();
+                    //LoadVillageFarmers(Village.Text, status_cb.ToString());
 
 
                 }
@@ -293,40 +350,21 @@ namespace KAMM_FARM_SERVICES.UI
 
         private void Village_SelectedIndexChanged(object sender, EventArgs e)
         {
-            bool status;
-            if (materialComboBox1.Text == "Validated")
-            {
-                status = true;
-            }
-            else if (materialComboBox1.Text == "Pending")
-            {
-                status = false;
-            }
-            else
-            {
-                LoadVillageFarmers(Village.Text);
-                return;
-            }
-            LoadVillageFarmers(Village.Text, status.ToString());
+            QueryFarmers();
         }
 
         private void materialComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            bool status;
-            if (materialComboBox1.Text == "Validated")
-            {
-                status = true;
-            }
-            else if (materialComboBox1.Text == "Pending")
-            {
-                status = false;
-            }
-            else
-            {
-                LoadVillageFarmers(Village.Text);
-                return;
-            }
-            LoadVillageFarmers(Village.Text, status.ToString());
+            QueryFarmers();
+        }
+
+        private void Farmers_Layout(object sender, LayoutEventArgs e)
+        {
+            panel2.Height = Convert.ToInt32(0.15 * Form1.PnlContainer.Height);
+
+            panel3.Width = panel4.Width = panel5.Width = Convert.ToInt32(0.7 * Form1.PnlContainer.Width) / 3;
+
+            panel6.Width = Form1.PnlContainer.Width - (panel3.Width * 3);
         }
     }
 }
