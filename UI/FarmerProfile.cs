@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using KAMM_FARM_SERVICES.DAL;
+using KAMM_FARM_SERVICES.UI.LoanDetailsAnalysis;
 
 namespace KAMM_FARM_SERVICES.UI
 {
@@ -30,6 +31,18 @@ namespace KAMM_FARM_SERVICES.UI
 
             FetchVisits(Convert.ToInt32(profile.id));
 
+
+
+        }
+
+
+        public void Load_Kin_info(dynamic kin_info)
+        {
+            NextOfKin kinform = new NextOfKin(kin_info) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.AnalysisPanel.Controls.Clear();
+            kinform.FormBorderStyle = FormBorderStyle.None;
+            this.AnalysisPanel.Controls.Add(kinform);
+            kinform.Show();
         }
 
         public async void FetchLoanApplications()
@@ -66,6 +79,8 @@ namespace KAMM_FARM_SERVICES.UI
                         applications[Overall_count - 1].Collateral.Count,
                         applications[Overall_count - 1].Date_added
                     );
+
+                    Load_Kin_info(applications[Overall_count - 1].Next_of_kin[0]);
                 }
 
 
@@ -111,7 +126,6 @@ namespace KAMM_FARM_SERVICES.UI
                     DateTime dateTime = DateTime.Parse(dateTimeString);
                     int month = dateTime.Month; // This will be 12 for December
 
-                    MessageBox.Show(Convert.ToString(snap.Coffee_acreage));
                     chart1.Series["Coffee acreage"].Points.AddXY(month.ToString(), Convert.ToInt32(snap.Coffee_acreage));
                     chart1.Series["Number of trees"].Points.AddXY(month.ToString(), Convert.ToInt32(snap.No_of_trees));
                     chart1.Series["Unproductive trees"].Points.AddXY(month.ToString(), Convert.ToInt32(snap.Unproductive_trees));
@@ -155,7 +169,7 @@ namespace KAMM_FARM_SERVICES.UI
         {
             //MessageBox.Show(profile.ToString());
             Name.Text = profile.Name.ToString();
-            name_2.Text = profile.Name.ToString();
+            name_2.Text = profile.Given_name.ToString();
             district.Text = profile.District.ToString();
             subcounty.Text = profile.Subcounty.ToString();
             village.Text = profile.Village.ToString();
@@ -673,6 +687,11 @@ namespace KAMM_FARM_SERVICES.UI
                 // user clicked no
 
             }
+        }
+
+        private void unproductive_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

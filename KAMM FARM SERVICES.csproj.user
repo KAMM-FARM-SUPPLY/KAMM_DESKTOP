@@ -16,6 +16,12 @@
     <Compile Update="UI\frmCategories.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UI\LoanApplicationProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\LoanApplications.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="UI\LoanDetailsAnalysis\LoanProducts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -29,6 +35,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="UI\Products.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\Repayments.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

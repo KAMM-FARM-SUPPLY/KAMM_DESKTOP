@@ -171,5 +171,35 @@ namespace KAMM_FARM_SERVICES
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.FromArgb(46, 51, 73);
+            panel4.Height = button2.Height;
+            panel4.Top = button2.Top;
+            panel4.Left = button2.Left;
+
+            this.panel3.Controls.Clear();
+            LoanApplications form = new LoanApplications() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            form.FormBorderStyle = FormBorderStyle.None;
+            this.panel3.Controls.Add(form);
+            form.Show();
+            button2.BackColor = Color.FromArgb(24, 30, 54);
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            button4.BackColor = Color.FromArgb(46, 51, 73);
+            panel4.Height = button4.Height;
+            panel4.Top = button4.Top;
+            panel4.Left = button4.Left;
+
+            this.panel3.Controls.Clear();
+            Repayments form = new Repayments() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            form.FormBorderStyle = FormBorderStyle.None;
+            this.panel3.Controls.Add(form);
+            form.Show();
+            button4.BackColor = Color.FromArgb(24, 30, 54);
+        }
     }
 }

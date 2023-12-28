@@ -43,9 +43,8 @@ namespace KAMM_FARM_SERVICES.DAL
                 }
 
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+            catch (HttpRequestException ex) { 
+                MessageBox.Show("An error occured . Check your internet connection.");
             }
             finally
             {
@@ -82,9 +81,8 @@ namespace KAMM_FARM_SERVICES.DAL
                 }
 
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+            catch (HttpRequestException ex) { 
+                MessageBox.Show("An error occured . Check your internet connection.");
             }
             finally
             {
@@ -118,9 +116,8 @@ namespace KAMM_FARM_SERVICES.DAL
                 }
 
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+            catch (HttpRequestException ex) { 
+                MessageBox.Show("An error occured . Check your internet connection.");
             }
             finally
             {
@@ -154,9 +151,8 @@ namespace KAMM_FARM_SERVICES.DAL
                 }
 
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+            catch (HttpRequestException ex) { 
+                MessageBox.Show("An error occured . Check your internet connection.");
             }
             finally
             {

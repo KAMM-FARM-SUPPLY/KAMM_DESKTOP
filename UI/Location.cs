@@ -83,14 +83,17 @@ namespace KAMM_FARM_SERVICES.UI
             Organise_dts();
             LocationsDAL location = new LocationsDAL();
             dynamic District_results = await location.Fetch();
-            //MessageBox.Show(District_results.ToString());
             ////Loading Districts
-            foreach (dynamic item in District_results)
+            if (District_results != null)
             {
-                Districts.Rows.Add(item.id, item.name , item.more_info, item.subcounties.Count);
+                foreach (dynamic item in District_results)
+                {
+                    Districts.Rows.Add(item.id, item.name, item.more_info, item.subcounties.Count);
 
+                }
+                dgv1.DataSource = Districts;
             }
-            dgv1.DataSource = Districts;
+            
 
 
 

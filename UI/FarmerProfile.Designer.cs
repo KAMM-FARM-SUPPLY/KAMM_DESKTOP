@@ -505,11 +505,11 @@
             // 
             this.gender_2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gender_2.AutoSize = true;
-            this.gender_2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.gender_2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.gender_2.ForeColor = System.Drawing.Color.White;
-            this.gender_2.Location = new System.Drawing.Point(100, 33);
+            this.gender_2.Location = new System.Drawing.Point(80, 33);
             this.gender_2.Name = "gender_2";
-            this.gender_2.Size = new System.Drawing.Size(42, 20);
+            this.gender_2.Size = new System.Drawing.Size(33, 15);
             this.gender_2.TabIndex = 59;
             this.gender_2.Text = "male";
             // 
@@ -517,11 +517,11 @@
             // 
             this.label66.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label66.AutoSize = true;
-            this.label66.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label66.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label66.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.label66.Location = new System.Drawing.Point(24, 33);
             this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(67, 20);
+            this.label66.Size = new System.Drawing.Size(51, 15);
             this.label66.TabIndex = 58;
             this.label66.Text = "Gender :";
             // 
@@ -529,11 +529,11 @@
             // 
             this.marital_status.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.marital_status.AutoSize = true;
-            this.marital_status.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.marital_status.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.marital_status.ForeColor = System.Drawing.Color.White;
-            this.marital_status.Location = new System.Drawing.Point(145, 80);
+            this.marital_status.Location = new System.Drawing.Point(112, 80);
             this.marital_status.Name = "marital_status";
-            this.marital_status.Size = new System.Drawing.Size(71, 20);
+            this.marital_status.Size = new System.Drawing.Size(55, 15);
             this.marital_status.TabIndex = 56;
             this.marital_status.Text = "Divorced";
             // 
@@ -541,11 +541,11 @@
             // 
             this.date_joined.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.date_joined.AutoSize = true;
-            this.date_joined.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.date_joined.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.date_joined.ForeColor = System.Drawing.Color.White;
-            this.date_joined.Location = new System.Drawing.Point(117, 126);
+            this.date_joined.Location = new System.Drawing.Point(100, 126);
             this.date_joined.Name = "date_joined";
-            this.date_joined.Size = new System.Drawing.Size(69, 20);
+            this.date_joined.Size = new System.Drawing.Size(59, 15);
             this.date_joined.TabIndex = 55;
             this.date_joined.Text = "2/3/2023";
             // 
@@ -553,11 +553,11 @@
             // 
             this.phone.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.phone.AutoSize = true;
-            this.phone.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.phone.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.phone.ForeColor = System.Drawing.Color.White;
-            this.phone.Location = new System.Drawing.Point(95, 176);
+            this.phone.Location = new System.Drawing.Point(75, 176);
             this.phone.Name = "phone";
-            this.phone.Size = new System.Drawing.Size(116, 20);
+            this.phone.Size = new System.Drawing.Size(98, 15);
             this.phone.TabIndex = 54;
             this.phone.Text = "+256758989094";
             // 
@@ -565,11 +565,11 @@
             // 
             this.trees.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.trees.AutoSize = true;
-            this.trees.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.trees.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.trees.ForeColor = System.Drawing.Color.White;
-            this.trees.Location = new System.Drawing.Point(79, 222);
+            this.trees.Location = new System.Drawing.Point(62, 221);
             this.trees.Name = "trees";
-            this.trees.Size = new System.Drawing.Size(23, 20);
+            this.trees.Size = new System.Drawing.Size(19, 15);
             this.trees.TabIndex = 53;
             this.trees.Text = "10";
             // 
@@ -577,11 +577,11 @@
             // 
             this.label56.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label56.AutoSize = true;
-            this.label56.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label56.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label56.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.label56.Location = new System.Drawing.Point(24, 222);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(52, 20);
+            this.label56.Size = new System.Drawing.Size(40, 15);
             this.label56.TabIndex = 51;
             this.label56.Text = "Trees: ";
             // 
@@ -589,11 +589,11 @@
             // 
             this.label67.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label67.AutoSize = true;
-            this.label67.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label67.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label67.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.label67.Location = new System.Drawing.Point(24, 80);
             this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(115, 20);
+            this.label67.Size = new System.Drawing.Size(89, 15);
             this.label67.TabIndex = 50;
             this.label67.Text = "Marital Status : ";
             // 
@@ -601,11 +601,11 @@
             // 
             this.label68.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label68.AutoSize = true;
-            this.label68.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label68.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label68.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.label68.Location = new System.Drawing.Point(24, 126);
             this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(100, 20);
+            this.label68.Size = new System.Drawing.Size(77, 15);
             this.label68.TabIndex = 49;
             this.label68.Text = "Date joined : ";
             // 
@@ -613,11 +613,11 @@
             // 
             this.label69.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label69.AutoSize = true;
-            this.label69.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label69.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label69.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.label69.Location = new System.Drawing.Point(24, 176);
             this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(65, 20);
+            this.label69.Size = new System.Drawing.Size(50, 15);
             this.label69.TabIndex = 48;
             this.label69.Text = "Phone : ";
             // 
@@ -625,11 +625,11 @@
             // 
             this.label54.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label54.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label54.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.label54.Location = new System.Drawing.Point(26, 269);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(141, 20);
+            this.label54.Size = new System.Drawing.Size(109, 15);
             this.label54.TabIndex = 52;
             this.label54.Text = "Coffee production: ";
             // 
@@ -637,11 +637,11 @@
             // 
             this.coffee_prod.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.coffee_prod.AutoSize = true;
-            this.coffee_prod.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.coffee_prod.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.coffee_prod.ForeColor = System.Drawing.Color.White;
-            this.coffee_prod.Location = new System.Drawing.Point(163, 269);
+            this.coffee_prod.Location = new System.Drawing.Point(136, 269);
             this.coffee_prod.Name = "coffee_prod";
-            this.coffee_prod.Size = new System.Drawing.Size(23, 20);
+            this.coffee_prod.Size = new System.Drawing.Size(19, 15);
             this.coffee_prod.TabIndex = 57;
             this.coffee_prod.Text = "10";
             // 
@@ -669,11 +669,11 @@
             // 
             this.village.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.village.AutoSize = true;
-            this.village.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.village.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.village.ForeColor = System.Drawing.Color.White;
-            this.village.Location = new System.Drawing.Point(98, 33);
+            this.village.Location = new System.Drawing.Point(84, 33);
             this.village.Name = "village";
-            this.village.Size = new System.Drawing.Size(70, 20);
+            this.village.Size = new System.Drawing.Size(53, 15);
             this.village.TabIndex = 58;
             this.village.Text = "Forkland";
             // 
@@ -681,11 +681,11 @@
             // 
             this.label70.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label70.AutoSize = true;
-            this.label70.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label70.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label70.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.label70.Location = new System.Drawing.Point(29, 33);
             this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(64, 20);
+            this.label70.Size = new System.Drawing.Size(49, 15);
             this.label70.TabIndex = 57;
             this.label70.Text = "Village :";
             // 
@@ -693,11 +693,11 @@
             // 
             this.coffee.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.coffee.AutoSize = true;
-            this.coffee.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.coffee.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.coffee.ForeColor = System.Drawing.Color.White;
-            this.coffee.Location = new System.Drawing.Point(158, 222);
+            this.coffee.Location = new System.Drawing.Point(130, 222);
             this.coffee.Name = "coffee";
-            this.coffee.Size = new System.Drawing.Size(25, 20);
+            this.coffee.Size = new System.Drawing.Size(21, 15);
             this.coffee.TabIndex = 56;
             this.coffee.Text = "20";
             // 
@@ -705,23 +705,24 @@
             // 
             this.unproductive.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.unproductive.AutoSize = true;
-            this.unproductive.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.unproductive.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.unproductive.ForeColor = System.Drawing.Color.White;
-            this.unproductive.Location = new System.Drawing.Point(187, 269);
+            this.unproductive.Location = new System.Drawing.Point(149, 268);
             this.unproductive.Name = "unproductive";
-            this.unproductive.Size = new System.Drawing.Size(25, 20);
+            this.unproductive.Size = new System.Drawing.Size(21, 15);
             this.unproductive.TabIndex = 55;
             this.unproductive.Text = "30";
+            this.unproductive.Click += new System.EventHandler(this.unproductive_Click_1);
             // 
             // date
             // 
             this.date.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.date.AutoSize = true;
-            this.date.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.date.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.date.ForeColor = System.Drawing.Color.White;
-            this.date.Location = new System.Drawing.Point(128, 176);
+            this.date.Location = new System.Drawing.Point(110, 176);
             this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(75, 20);
+            this.date.Size = new System.Drawing.Size(64, 15);
             this.date.TabIndex = 54;
             this.date.Text = "9/12/2023";
             // 
@@ -729,11 +730,11 @@
             // 
             this.gender.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gender.AutoSize = true;
-            this.gender.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.gender.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.gender.ForeColor = System.Drawing.Color.White;
             this.gender.Location = new System.Drawing.Point(102, 126);
             this.gender.Name = "gender";
-            this.gender.Size = new System.Drawing.Size(42, 20);
+            this.gender.Size = new System.Drawing.Size(33, 15);
             this.gender.TabIndex = 53;
             this.gender.Text = "male";
             // 
@@ -741,11 +742,11 @@
             // 
             this.NIN_no.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.NIN_no.AutoSize = true;
-            this.NIN_no.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.NIN_no.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.NIN_no.ForeColor = System.Drawing.Color.White;
-            this.NIN_no.Location = new System.Drawing.Point(98, 80);
+            this.NIN_no.Location = new System.Drawing.Point(82, 80);
             this.NIN_no.Name = "NIN_no";
-            this.NIN_no.Size = new System.Drawing.Size(113, 20);
+            this.NIN_no.Size = new System.Drawing.Size(92, 15);
             this.NIN_no.TabIndex = 52;
             this.NIN_no.Text = "CF262722jkkw2";
             // 
@@ -753,11 +754,11 @@
             // 
             this.label55.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label55.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label55.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.label55.Location = new System.Drawing.Point(29, 269);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(152, 20);
+            this.label55.Size = new System.Drawing.Size(116, 15);
             this.label55.TabIndex = 51;
             this.label55.Text = "Unproductive trees : ";
             // 
@@ -765,11 +766,11 @@
             // 
             this.label57.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label57.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label57.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.label57.Location = new System.Drawing.Point(29, 222);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(123, 20);
+            this.label57.Size = new System.Drawing.Size(94, 15);
             this.label57.TabIndex = 50;
             this.label57.Text = "Coffee acreage : ";
             // 
@@ -777,11 +778,11 @@
             // 
             this.label71.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label71.AutoSize = true;
-            this.label71.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label71.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label71.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.label71.Location = new System.Drawing.Point(29, 80);
             this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(63, 20);
+            this.label71.Size = new System.Drawing.Size(49, 15);
             this.label71.TabIndex = 49;
             this.label71.Text = "NIN no.";
             // 
@@ -789,11 +790,11 @@
             // 
             this.label72.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label72.AutoSize = true;
-            this.label72.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label72.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label72.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.label72.Location = new System.Drawing.Point(29, 126);
             this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(67, 20);
+            this.label72.Size = new System.Drawing.Size(51, 15);
             this.label72.TabIndex = 48;
             this.label72.Text = "Gender :";
             // 
@@ -801,11 +802,11 @@
             // 
             this.label73.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label73.AutoSize = true;
-            this.label73.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label73.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label73.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.label73.Location = new System.Drawing.Point(29, 176);
             this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(108, 20);
+            this.label73.Size = new System.Drawing.Size(83, 15);
             this.label73.TabIndex = 47;
             this.label73.Text = "Date of birth : ";
             // 
@@ -831,11 +832,11 @@
             // 
             this.Name.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Name.AutoSize = true;
-            this.Name.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Name.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Name.ForeColor = System.Drawing.Color.White;
-            this.Name.Location = new System.Drawing.Point(100, 32);
+            this.Name.Location = new System.Drawing.Point(84, 32);
             this.Name.Name = "Name";
-            this.Name.Size = new System.Drawing.Size(60, 20);
+            this.Name.Size = new System.Drawing.Size(47, 15);
             this.Name.TabIndex = 55;
             this.Name.Text = "Ntambi";
             // 
@@ -843,11 +844,11 @@
             // 
             this.label74.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label74.AutoSize = true;
-            this.label74.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label74.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label74.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.label74.Location = new System.Drawing.Point(10, 32);
             this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(88, 20);
+            this.label74.Size = new System.Drawing.Size(68, 15);
             this.label74.TabIndex = 54;
             this.label74.Text = "First name :";
             // 
@@ -855,11 +856,11 @@
             // 
             this.Land_acreage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Land_acreage.AutoSize = true;
-            this.Land_acreage.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Land_acreage.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Land_acreage.ForeColor = System.Drawing.Color.White;
-            this.Land_acreage.Location = new System.Drawing.Point(120, 221);
+            this.Land_acreage.Location = new System.Drawing.Point(100, 221);
             this.Land_acreage.Name = "Land_acreage";
-            this.Land_acreage.Size = new System.Drawing.Size(25, 20);
+            this.Land_acreage.Size = new System.Drawing.Size(21, 15);
             this.Land_acreage.TabIndex = 53;
             this.Land_acreage.Text = "30";
             // 
@@ -867,11 +868,11 @@
             // 
             this.label58.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label58.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label58.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.label58.Location = new System.Drawing.Point(6, 221);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(112, 20);
+            this.label58.Size = new System.Drawing.Size(86, 15);
             this.label58.TabIndex = 52;
             this.label58.Text = "Land acreage : ";
             // 
@@ -879,11 +880,11 @@
             // 
             this.district.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.district.AutoSize = true;
-            this.district.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.district.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.district.ForeColor = System.Drawing.Color.White;
-            this.district.Location = new System.Drawing.Point(100, 125);
+            this.district.Location = new System.Drawing.Point(67, 126);
             this.district.Name = "district";
-            this.district.Size = new System.Drawing.Size(61, 20);
+            this.district.Size = new System.Drawing.Size(47, 15);
             this.district.TabIndex = 51;
             this.district.Text = "Masaka";
             // 
@@ -891,11 +892,11 @@
             // 
             this.label60.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label60.AutoSize = true;
-            this.label60.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label60.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label60.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.label60.Location = new System.Drawing.Point(10, 125);
             this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(65, 20);
+            this.label60.Size = new System.Drawing.Size(51, 15);
             this.label60.TabIndex = 50;
             this.label60.Text = "District :";
             // 
@@ -903,11 +904,11 @@
             // 
             this.subcounty.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.subcounty.AutoSize = true;
-            this.subcounty.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.subcounty.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.subcounty.ForeColor = System.Drawing.Color.White;
-            this.subcounty.Location = new System.Drawing.Point(100, 175);
+            this.subcounty.Location = new System.Drawing.Point(82, 175);
             this.subcounty.Name = "subcounty";
-            this.subcounty.Size = new System.Drawing.Size(64, 20);
+            this.subcounty.Size = new System.Drawing.Size(49, 15);
             this.subcounty.TabIndex = 49;
             this.subcounty.Text = "Nyendo";
             // 
@@ -915,11 +916,11 @@
             // 
             this.label62.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label62.AutoSize = true;
-            this.label62.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label62.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label62.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.label62.Location = new System.Drawing.Point(10, 175);
             this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(86, 20);
+            this.label62.Size = new System.Drawing.Size(68, 15);
             this.label62.TabIndex = 48;
             this.label62.Text = "Subcounty:";
             // 
@@ -927,11 +928,11 @@
             // 
             this.name_2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.name_2.AutoSize = true;
-            this.name_2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.name_2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.name_2.ForeColor = System.Drawing.Color.White;
-            this.name_2.Location = new System.Drawing.Point(114, 79);
+            this.name_2.Location = new System.Drawing.Point(97, 79);
             this.name_2.Name = "name_2";
-            this.name_2.Size = new System.Drawing.Size(113, 20);
+            this.name_2.Size = new System.Drawing.Size(89, 15);
             this.name_2.TabIndex = 47;
             this.name_2.Text = "Nassim Sewaya";
             // 
@@ -939,11 +940,11 @@
             // 
             this.label64.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label64.AutoSize = true;
-            this.label64.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label64.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label64.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.label64.Location = new System.Drawing.Point(10, 79);
             this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(104, 20);
+            this.label64.Size = new System.Drawing.Size(81, 15);
             this.label64.TabIndex = 46;
             this.label64.Text = "Other names :";
             // 
@@ -979,11 +980,11 @@
             // label75
             // 
             this.label75.AutoSize = true;
-            this.label75.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label75.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label75.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.label75.Location = new System.Drawing.Point(6, 49);
             this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(83, 20);
+            this.label75.Size = new System.Drawing.Size(64, 15);
             this.label75.TabIndex = 47;
             this.label75.Text = "Signature :";
             // 

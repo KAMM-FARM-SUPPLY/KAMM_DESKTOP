@@ -29,3 +29,6 @@ C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\bin\Debug\net6.0-windows\
 C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\bin\Debug\net6.0-windows\WinForms.DataVisualization.dll
 C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.LoanDetailsAnalysis.LoanProducts.resources
 C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.LoanDetailsAnalysis.NextOfKin.resources
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.LoanApplications.resources
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.LoanApplicationProfile.resources
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.Repayments.resources
