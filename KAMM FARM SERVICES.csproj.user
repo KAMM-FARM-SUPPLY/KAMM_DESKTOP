@@ -40,5 +40,8 @@
     <Compile Update="UI\Repayments.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UI\Visits.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

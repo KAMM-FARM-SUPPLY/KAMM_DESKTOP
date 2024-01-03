@@ -32,3 +32,4 @@ C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\
 C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.LoanApplications.resources
 C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.LoanApplicationProfile.resources
 C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.Repayments.resources
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.Visits.resources

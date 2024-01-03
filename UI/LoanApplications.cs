@@ -132,6 +132,8 @@ namespace KAMM_FARM_SERVICES.UI
 
             panel16.Width = panel2.Width - (panel10.Width + panel13.Width);
 
+            panel17.Height = panel18.Height = panel19.Height = Convert.ToInt32(0.85 * panel16.Height)/3;
+
         }
 
         private async void LoanApplications_Load(object sender, EventArgs e)
