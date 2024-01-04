@@ -28,6 +28,12 @@
     <Compile Update="UI\LoanDetailsAnalysis\NextOfKin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UI\LoanVisitsForms\CreateVisit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UI\LoanVisitsForms\VisitProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="UI\Location.cs">
       <SubType>Form</SubType>
     </Compile>

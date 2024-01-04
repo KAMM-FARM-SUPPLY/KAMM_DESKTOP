@@ -1,4 +1,5 @@
 ﻿using KAMM_FARM_SERVICES.DAL;
+using KAMM_FARM_SERVICES.UI.LoanVisitsForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,8 @@ namespace KAMM_FARM_SERVICES.UI
 
         DataTable VisitsDT = new DataTable();
         dynamic currnt_visits = null;
+        dynamic Locations = null;
+        dynamic farmers = null;
 
         public Visits()
         {
@@ -63,6 +66,42 @@ namespace KAMM_FARM_SERVICES.UI
             }
         }
 
+        public int convert_to_id(string name)
+        {
+            foreach (dynamic farmer in farmers)
+            {
+                var Name = Convert.ToString(farmer.Name) + " " + Convert.ToString(farmer.Given_name);
+
+                if (Name == name)
+                {
+                    return Convert.ToInt32(farmer.id);
+                }
+            }
+
+            return 0;
+        }
+
+
+        public async void Regenerate()
+        {
+
+            LoanApplicationsDAL app = new LoanApplicationsDAL();
+            dynamic results = await app.QueryFarmerLoans(
+                    false,
+                    convert_to_id(farmer_cb.Text),
+                    status_cb.Text.Trim(),
+                    district_cb.Text.Trim(),
+                    subcounty_cb.Text.Trim(),
+                    village_cb.Text.Trim(),
+                    ((label11.Text == "?") ? (dateTimePicker1.Value.AddDays(-1).ToString("yyyy-MM-dd HH:mm:ss")) : ("")),
+                    ((label11.Text == "?") ? (dateTimePicker2.Value.AddDays(1).ToString("yyyy-MM-dd HH:mm:ss")) : (""))
+
+                );
+
+            populateDGV(results);
+
+        }
+
 
 
         private void Visits_Layout(object sender, LayoutEventArgs e)
@@ -93,13 +132,132 @@ namespace KAMM_FARM_SERVICES.UI
             dynamic visits = await visitsDAL.Fetch_Visits();
             populateDGV(visits);
 
+
+            
+
+
+            //Loading all respective Locations
+            LocationsDAL location = new LocationsDAL();
+            Locations = await location.Fetch();
+            foreach (dynamic district in Locations)
+            {
+                district_cb.Items.Add(district);
+
+                //Populating the subcounties too
+                foreach (dynamic county in district.subcounties)
+                {
+                    subcounty_cb.Items.Add(county);
+
+                    //Populating the villages too
+                    foreach (dynamic village in county.villages)
+                    {
+                        village_cb.Items.Add(village);
+                    }
+                }
+            }
+
+            district_cb.DisplayMember = "name";
+            district_cb.ValueMember = "id";
+
+            subcounty_cb.DisplayMember = "name";
+            subcounty_cb.ValueMember = "id";
+
+            village_cb.DisplayMember = "name";
+            village_cb.ValueMember = "id";
+
+            //Load Farmers
+            FarmersDAL Farmer = new FarmersDAL();
+            farmers = await Farmer.Fetch();
+
+            foreach (dynamic farmer in farmers)
+            {
+                var Name = Convert.ToString(farmer.Name) + " " + Convert.ToString(farmer.Given_name);
+
+                farmer_cb.Items.Add(Name);
+            }
+            //farmer_cb.DisplayMember = "Name";
+            //farmer_cb.ValueMember = "id";
+
+
         }
 
-        
+
 
         private void FarmerVisits_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            if (e.ColumnIndex != 0)
+            {
+                VisitProfile profile = new VisitProfile(currnt_visits[e.RowIndex]);
+                profile.Show();
+            }
+        }
+
+        private void district_cb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Populating the Sub counties
+            dynamic obj = district_cb.Items[district_cb.SelectedIndex];
+            if (obj != null)
+            {
+
+                subcounty_cb.Items.Clear();
+                foreach (dynamic sub in obj.subcounties)
+                {
+                    subcounty_cb.Items.Add(sub);
+                }
+                subcounty_cb.Text = " ";
+                subcounty_cb.DisplayMember = "name";
+                subcounty_cb.ValueMember = "id";
+            }
+
+            //Populate the Villages
+            village_cb.Items.Clear();
+            foreach (dynamic subcounty in obj.subcounties)
+            {
+                foreach (dynamic village in subcounty.villages)
+                {
+                    village_cb.Items.Add(village);
+                }
+            }
+            village_cb.Text = " ";
+            village_cb.DisplayMember = "name";
+            village_cb.ValueMember = "id";
+        }
+
+        private void subcounty_cb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Populating the Sub counties
+            dynamic obj = subcounty_cb.Items[subcounty_cb.SelectedIndex];
+            if (obj != null)
+            {
+                village_cb.Items.Clear();
+                foreach (dynamic sub in obj.villages)
+                {
+                    village_cb.Items.Add(sub);
+                }
+                village_cb.Text = " ";
+                village_cb.DisplayMember = "name";
+                village_cb.ValueMember = "id";
+            }
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            if (label11.Text == "X")
+            {
+                label11.Text = "?";
+                //Regenerate();
+            }
+            else
+            {
+                label11.Text = "X";
+                //Regenerate();
+            }
+        }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+            CreateVisit visit = new CreateVisit();
+            visit.Show();
         }
     }
 }

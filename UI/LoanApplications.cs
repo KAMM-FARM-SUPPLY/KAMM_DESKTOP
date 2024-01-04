@@ -364,7 +364,7 @@ namespace KAMM_FARM_SERVICES.UI
 
         private void LoanApps_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && !(e.RowIndex == current_Loan_applications.Count))
+            if (e.RowIndex >= 0 && !(e.RowIndex == current_Loan_applications.Count) && !(e.ColumnIndex == 0))
             {
                 LoanApplicationProfile profile = new LoanApplicationProfile(current_Loan_applications[e.RowIndex]);
                 profile.Show(); 

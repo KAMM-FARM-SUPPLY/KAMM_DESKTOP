@@ -32,28 +32,30 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.field_cb = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.farmer_cb = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.village_cb = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.subcounty_cb = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.district_cb = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.validity_cb = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.status_cb = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
             this.panel18 = new System.Windows.Forms.Panel();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.label10 = new System.Windows.Forms.Label();
@@ -68,12 +70,11 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.FarmerVisits = new KAMM_FARM_SERVICES.Components.DGV();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -84,6 +85,7 @@
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel17.SuspendLayout();
+            this.panel19.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -93,7 +95,6 @@
             this.panel11.SuspendLayout();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FarmerVisits)).BeginInit();
-            this.panel19.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -114,7 +115,7 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.comboBox6);
+            this.panel8.Controls.Add(this.field_cb);
             this.panel8.Controls.Add(this.label6);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 432);
@@ -122,23 +123,19 @@
             this.panel8.Size = new System.Drawing.Size(305, 80);
             this.panel8.TabIndex = 6;
             // 
-            // comboBox6
+            // field_cb
             // 
-            this.comboBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox6.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox6.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
-            this.comboBox6.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox6.ForeColor = System.Drawing.Color.White;
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
-            "Unapproved",
-            "Approved",
-            "Disbursed"});
-            this.comboBox6.Location = new System.Drawing.Point(105, 24);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(178, 33);
-            this.comboBox6.TabIndex = 22;
+            this.field_cb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.field_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.field_cb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.field_cb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
+            this.field_cb.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.field_cb.ForeColor = System.Drawing.Color.White;
+            this.field_cb.FormattingEnabled = true;
+            this.field_cb.Location = new System.Drawing.Point(105, 24);
+            this.field_cb.Name = "field_cb";
+            this.field_cb.Size = new System.Drawing.Size(178, 33);
+            this.field_cb.TabIndex = 22;
             // 
             // label6
             // 
@@ -155,7 +152,7 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.comboBox5);
+            this.panel7.Controls.Add(this.farmer_cb);
             this.panel7.Controls.Add(this.label5);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 358);
@@ -163,23 +160,19 @@
             this.panel7.Size = new System.Drawing.Size(305, 74);
             this.panel7.TabIndex = 5;
             // 
-            // comboBox5
+            // farmer_cb
             // 
-            this.comboBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox5.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox5.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
-            this.comboBox5.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox5.ForeColor = System.Drawing.Color.White;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "Unapproved",
-            "Approved",
-            "Disbursed"});
-            this.comboBox5.Location = new System.Drawing.Point(105, 21);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(178, 33);
-            this.comboBox5.TabIndex = 22;
+            this.farmer_cb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.farmer_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.farmer_cb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.farmer_cb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
+            this.farmer_cb.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.farmer_cb.ForeColor = System.Drawing.Color.White;
+            this.farmer_cb.FormattingEnabled = true;
+            this.farmer_cb.Location = new System.Drawing.Point(105, 21);
+            this.farmer_cb.Name = "farmer_cb";
+            this.farmer_cb.Size = new System.Drawing.Size(178, 33);
+            this.farmer_cb.TabIndex = 22;
             // 
             // label5
             // 
@@ -196,7 +189,7 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.comboBox4);
+            this.panel6.Controls.Add(this.village_cb);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 280);
@@ -204,23 +197,19 @@
             this.panel6.Size = new System.Drawing.Size(305, 78);
             this.panel6.TabIndex = 4;
             // 
-            // comboBox4
+            // village_cb
             // 
-            this.comboBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
-            this.comboBox4.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox4.ForeColor = System.Drawing.Color.White;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Unapproved",
-            "Approved",
-            "Disbursed"});
-            this.comboBox4.Location = new System.Drawing.Point(105, 23);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(178, 33);
-            this.comboBox4.TabIndex = 22;
+            this.village_cb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.village_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.village_cb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.village_cb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
+            this.village_cb.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.village_cb.ForeColor = System.Drawing.Color.White;
+            this.village_cb.FormattingEnabled = true;
+            this.village_cb.Location = new System.Drawing.Point(105, 23);
+            this.village_cb.Name = "village_cb";
+            this.village_cb.Size = new System.Drawing.Size(178, 33);
+            this.village_cb.TabIndex = 22;
             // 
             // label4
             // 
@@ -237,7 +226,7 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.comboBox3);
+            this.panel5.Controls.Add(this.subcounty_cb);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 205);
@@ -245,23 +234,20 @@
             this.panel5.Size = new System.Drawing.Size(305, 75);
             this.panel5.TabIndex = 3;
             // 
-            // comboBox3
+            // subcounty_cb
             // 
-            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
-            this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox3.ForeColor = System.Drawing.Color.White;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Unapproved",
-            "Approved",
-            "Disbursed"});
-            this.comboBox3.Location = new System.Drawing.Point(105, 21);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(178, 33);
-            this.comboBox3.TabIndex = 22;
+            this.subcounty_cb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.subcounty_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.subcounty_cb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.subcounty_cb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
+            this.subcounty_cb.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.subcounty_cb.ForeColor = System.Drawing.Color.White;
+            this.subcounty_cb.FormattingEnabled = true;
+            this.subcounty_cb.Location = new System.Drawing.Point(105, 21);
+            this.subcounty_cb.Name = "subcounty_cb";
+            this.subcounty_cb.Size = new System.Drawing.Size(178, 33);
+            this.subcounty_cb.TabIndex = 22;
+            this.subcounty_cb.SelectedIndexChanged += new System.EventHandler(this.subcounty_cb_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -278,7 +264,7 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.comboBox2);
+            this.panel4.Controls.Add(this.district_cb);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 137);
@@ -286,23 +272,20 @@
             this.panel4.Size = new System.Drawing.Size(305, 68);
             this.panel4.TabIndex = 2;
             // 
-            // comboBox2
+            // district_cb
             // 
-            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox2.ForeColor = System.Drawing.Color.White;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Unapproved",
-            "Approved",
-            "Disbursed"});
-            this.comboBox2.Location = new System.Drawing.Point(105, 18);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(178, 33);
-            this.comboBox2.TabIndex = 22;
+            this.district_cb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.district_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.district_cb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.district_cb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
+            this.district_cb.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.district_cb.ForeColor = System.Drawing.Color.White;
+            this.district_cb.FormattingEnabled = true;
+            this.district_cb.Location = new System.Drawing.Point(105, 18);
+            this.district_cb.Name = "district_cb";
+            this.district_cb.Size = new System.Drawing.Size(178, 33);
+            this.district_cb.TabIndex = 22;
+            this.district_cb.SelectedIndexChanged += new System.EventHandler(this.district_cb_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -319,7 +302,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.validity_cb);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 70);
@@ -327,23 +310,19 @@
             this.panel3.Size = new System.Drawing.Size(305, 67);
             this.panel3.TabIndex = 1;
             // 
-            // comboBox1
+            // validity_cb
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.ForeColor = System.Drawing.Color.White;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Unapproved",
-            "Approved",
-            "Disbursed"});
-            this.comboBox1.Location = new System.Drawing.Point(105, 17);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(178, 33);
-            this.comboBox1.TabIndex = 22;
+            this.validity_cb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.validity_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.validity_cb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.validity_cb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
+            this.validity_cb.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.validity_cb.ForeColor = System.Drawing.Color.White;
+            this.validity_cb.FormattingEnabled = true;
+            this.validity_cb.Location = new System.Drawing.Point(105, 17);
+            this.validity_cb.Name = "validity_cb";
+            this.validity_cb.Size = new System.Drawing.Size(178, 33);
+            this.validity_cb.TabIndex = 22;
             // 
             // label1
             // 
@@ -379,8 +358,7 @@
             this.status_cb.FormattingEnabled = true;
             this.status_cb.Items.AddRange(new object[] {
             "Unapproved",
-            "Approved",
-            "Disbursed"});
+            "Approved"});
             this.status_cb.Location = new System.Drawing.Point(105, 19);
             this.status_cb.Name = "status_cb";
             this.status_cb.Size = new System.Drawing.Size(178, 33);
@@ -422,6 +400,36 @@
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(273, 146);
             this.panel17.TabIndex = 2;
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.materialButton3);
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel19.Location = new System.Drawing.Point(0, 56);
+            this.panel19.Name = "panel19";
+            this.panel19.Padding = new System.Windows.Forms.Padding(4);
+            this.panel19.Size = new System.Drawing.Size(269, 38);
+            this.panel19.TabIndex = 21;
+            // 
+            // materialButton3
+            // 
+            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton3.Depth = 0;
+            this.materialButton3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialButton3.HighEmphasis = true;
+            this.materialButton3.Icon = null;
+            this.materialButton3.Location = new System.Drawing.Point(4, 4);
+            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton3.Name = "materialButton3";
+            this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton3.Size = new System.Drawing.Size(261, 30);
+            this.materialButton3.TabIndex = 0;
+            this.materialButton3.Text = "Approve Visit";
+            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton3.UseAccentColor = false;
+            this.materialButton3.UseVisualStyleBackColor = true;
             // 
             // panel18
             // 
@@ -538,6 +546,7 @@
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton2.UseAccentColor = false;
             this.materialButton2.UseVisualStyleBackColor = true;
+            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
             // 
             // label9
             // 
@@ -596,6 +605,7 @@
             // panel11
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel11.Controls.Add(this.label11);
             this.panel11.Controls.Add(this.dateTimePicker1);
             this.panel11.Controls.Add(this.label7);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
@@ -603,6 +613,19 @@
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(246, 68);
             this.panel11.TabIndex = 0;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(0, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(19, 21);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "X";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // dateTimePicker1
             // 
@@ -662,36 +685,6 @@
             this.FarmerVisits.TabIndex = 29;
             this.FarmerVisits.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FarmerVisits_CellClick);
             // 
-            // panel19
-            // 
-            this.panel19.Controls.Add(this.materialButton3);
-            this.panel19.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel19.Location = new System.Drawing.Point(0, 56);
-            this.panel19.Name = "panel19";
-            this.panel19.Padding = new System.Windows.Forms.Padding(4);
-            this.panel19.Size = new System.Drawing.Size(269, 38);
-            this.panel19.TabIndex = 21;
-            // 
-            // materialButton3
-            // 
-            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton3.Depth = 0;
-            this.materialButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialButton3.HighEmphasis = true;
-            this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(4, 4);
-            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton3.Name = "materialButton3";
-            this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton3.Size = new System.Drawing.Size(261, 30);
-            this.materialButton3.TabIndex = 0;
-            this.materialButton3.Text = "Approve Visit";
-            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton3.UseAccentColor = false;
-            this.materialButton3.UseVisualStyleBackColor = true;
-            // 
             // Visits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -724,6 +717,8 @@
             this.panel9.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.panel14.ResumeLayout(false);
@@ -739,8 +734,6 @@
             this.panel11.PerformLayout();
             this.panel13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.FarmerVisits)).EndInit();
-            this.panel19.ResumeLayout(false);
-            this.panel19.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -755,17 +748,17 @@
         private Panel panel4;
         private Panel panel3;
         private Panel panel2;
-        private ComboBox comboBox6;
+        private ComboBox field_cb;
         private Label label6;
-        private ComboBox comboBox5;
+        private ComboBox farmer_cb;
         private Label label5;
-        private ComboBox comboBox4;
+        private ComboBox village_cb;
         private Label label4;
-        private ComboBox comboBox3;
+        private ComboBox subcounty_cb;
         private Label label3;
-        private ComboBox comboBox2;
+        private ComboBox district_cb;
         private Label label2;
-        private ComboBox comboBox1;
+        private ComboBox validity_cb;
         private Label label1;
         private ComboBox status_cb;
         private Label label23;
@@ -791,5 +784,6 @@
         private Label label10;
         private Panel panel19;
         private MaterialSkin.Controls.MaterialButton materialButton3;
+        private Label label11;
     }
 }
