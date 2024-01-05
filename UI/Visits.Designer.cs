@@ -173,6 +173,9 @@
             this.farmer_cb.Name = "farmer_cb";
             this.farmer_cb.Size = new System.Drawing.Size(178, 33);
             this.farmer_cb.TabIndex = 22;
+            this.farmer_cb.SelectedIndexChanged += new System.EventHandler(this.farmer_cb_SelectedIndexChanged);
+            this.farmer_cb.TextUpdate += new System.EventHandler(this.district_cb_TextChanged);
+            this.farmer_cb.TextChanged += new System.EventHandler(this.district_cb_TextChanged);
             // 
             // label5
             // 
@@ -210,6 +213,8 @@
             this.village_cb.Name = "village_cb";
             this.village_cb.Size = new System.Drawing.Size(178, 33);
             this.village_cb.TabIndex = 22;
+            this.village_cb.TextUpdate += new System.EventHandler(this.district_cb_TextChanged);
+            this.village_cb.TextChanged += new System.EventHandler(this.district_cb_TextChanged);
             // 
             // label4
             // 
@@ -248,6 +253,8 @@
             this.subcounty_cb.Size = new System.Drawing.Size(178, 33);
             this.subcounty_cb.TabIndex = 22;
             this.subcounty_cb.SelectedIndexChanged += new System.EventHandler(this.subcounty_cb_SelectedIndexChanged);
+            this.subcounty_cb.TextUpdate += new System.EventHandler(this.district_cb_TextChanged);
+            this.subcounty_cb.TextChanged += new System.EventHandler(this.district_cb_TextChanged);
             // 
             // label3
             // 
@@ -286,6 +293,8 @@
             this.district_cb.Size = new System.Drawing.Size(178, 33);
             this.district_cb.TabIndex = 22;
             this.district_cb.SelectedIndexChanged += new System.EventHandler(this.district_cb_SelectedIndexChanged);
+            this.district_cb.TextUpdate += new System.EventHandler(this.district_cb_TextChanged);
+            this.district_cb.TextChanged += new System.EventHandler(this.district_cb_TextChanged);
             // 
             // label2
             // 
@@ -430,6 +439,7 @@
             this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton3.UseAccentColor = false;
             this.materialButton3.UseVisualStyleBackColor = true;
+            this.materialButton3.Click += new System.EventHandler(this.materialButton3_Click);
             // 
             // panel18
             // 
@@ -515,6 +525,7 @@
             this.delete_btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.delete_btn.UseAccentColor = false;
             this.delete_btn.UseVisualStyleBackColor = true;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
             // panel15
             // 

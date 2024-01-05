@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using KAMM_FARM_SERVICES.DAL;
+using KAMM_FARM_SERVICES.Helpers;
 
 namespace KAMM_FARM_SERVICES.UI
 {
@@ -373,6 +374,43 @@ namespace KAMM_FARM_SERVICES.UI
 
 
             
+        }
+
+        private async void materialButton1_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            List<DataGridViewRow> selected_rows = new List<DataGridViewRow>();
+
+            //Getting all the selected visits
+            foreach (DataGridViewRow dr in LoanApps.Rows)
+            {
+                if (Convert.ToBoolean(dr.Cells[0].Value))
+                {
+                    selected_rows.Add(dr);
+                }
+            }
+
+
+            if (selected_rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in selected_rows)
+                {
+                    bool deleted = await Handlers.Delete(Env.live_url + "/Delete_visit/" + row.Cells[10].Value.ToString() + "/");
+                    if (!deleted)
+                    {
+                        MessageBox.Show("An error occured during deletion");
+                    }
+
+                }
+
+                MessageBox.Show("All selected visit(s) deleted sucessfully");
+                Regenerate();
+            }
+            else
+            {
+                MessageBox.Show("No rows were selected");
+            }
+            Cursor = Cursors.Default;
         }
     }
 }

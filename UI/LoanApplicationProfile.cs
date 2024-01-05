@@ -65,7 +65,7 @@ namespace KAMM_FARM_SERVICES.UI
             Coffee_prod.Text = Convert.ToString(LoanApplicationInfo.farmer.Ov_coffee_prod);
 
 
-            Picture_bx.Image = await ImageProcesser.create_img(LoanApplicationInfo.Next_of_kin[0].image.ToString(), Picture_bx.Size);
+            Picture_bx.Image = await ImageProcesser.create_img(LoanApplicationInfo.Active_picture.ToString(), Picture_bx.Size);
             Signature_bx.Image = await ImageProcesser.create_img(LoanApplicationInfo.Signature.ToString(), Signature_bx.Size);
 
             //Loading Kin information

@@ -1,4 +1,5 @@
 ﻿using KAMM_FARM_SERVICES.DAL;
+using KAMM_FARM_SERVICES.Helpers;
 using KAMM_FARM_SERVICES.UI.LoanVisitsForms;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,9 @@ namespace KAMM_FARM_SERVICES.UI
             VisitsDT.Columns.Add("District", typeof(string));
             VisitsDT.Columns.Add("Subcounty", typeof(string));
             VisitsDT.Columns.Add("Village", typeof(string));
+            VisitsDT.Columns.Add("Visit ID", typeof(string));
+
+
 
         }
 
@@ -57,10 +61,13 @@ namespace KAMM_FARM_SERVICES.UI
                         visit.Date_added,
                         visit.Farmer_id.District,
                         visit.Farmer_id.Subcounty,
-                        visit.Farmer_id.Village
+                        visit.Farmer_id.Village,
+                        visit.visit_id
                    );
                 }
                 FarmerVisits.DataSource = VisitsDT;
+
+                FarmerVisits.Columns[10].Visible = false;
                
 
             }
@@ -85,10 +92,10 @@ namespace KAMM_FARM_SERVICES.UI
         public async void Regenerate()
         {
 
-            LoanApplicationsDAL app = new LoanApplicationsDAL();
-            dynamic results = await app.QueryFarmerLoans(
+            VisitsDAL visit = new VisitsDAL();
+            dynamic results = await visit.QueryVisits(
                     false,
-                    convert_to_id(farmer_cb.Text),
+                    convert_to_id(farmer_cb.Text.Trim()),
                     status_cb.Text.Trim(),
                     district_cb.Text.Trim(),
                     subcounty_cb.Text.Trim(),
@@ -187,8 +194,16 @@ namespace KAMM_FARM_SERVICES.UI
         {
             if (e.ColumnIndex != 0)
             {
-                VisitProfile profile = new VisitProfile(currnt_visits[e.RowIndex]);
-                profile.Show();
+                if (Convert.ToBoolean(FarmerVisits.Rows[e.RowIndex].Cells[3].Value))
+                {
+                    VisitProfile profile = new VisitProfile(currnt_visits[e.RowIndex]);
+                    profile.Show();
+                }
+                else
+                {
+                    MessageBox.Show("This Visit has not yet been filled");
+                }
+                
             }
         }
 
@@ -245,19 +260,120 @@ namespace KAMM_FARM_SERVICES.UI
             if (label11.Text == "X")
             {
                 label11.Text = "?";
-                //Regenerate();
+                Regenerate();
             }
             else
             {
                 label11.Text = "X";
-                //Regenerate();
+                Regenerate();
             }
         }
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
-            CreateVisit visit = new CreateVisit();
+            CreateVisit visit = new CreateVisit(this);
             visit.Show();
+        }
+
+        private void district_cb_TextChanged(object sender, EventArgs e)
+        {
+            Regenerate();
+        }
+
+        private void farmer_cb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Regenerate();
+        }
+
+        private async void delete_btn_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            List<DataGridViewRow> selected_rows = new List<DataGridViewRow>();
+
+            //Getting all the selected visits
+            foreach(DataGridViewRow dr in FarmerVisits.Rows)
+            {
+                if (Convert.ToBoolean(dr.Cells[0].Value))
+                {
+                    selected_rows.Add(dr);
+                }
+            }
+
+
+            if (selected_rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in selected_rows)
+                {
+                    bool deleted = await Handlers.Delete(Env.live_url + "/Delete_visit/" + row.Cells[10].Value.ToString() + "/");
+                    if (!deleted)
+                    {
+                        MessageBox.Show("An error occured during deletion");
+                    }
+                    
+                }
+
+                MessageBox.Show("All selected visit(s) deleted sucessfully");
+                Regenerate();
+            }
+            else
+            {
+                MessageBox.Show("No rows were selected");
+            }
+            Cursor = Cursors.Default;
+        }
+
+        private async void materialButton3_Click(object sender, EventArgs e)
+        { 
+            Cursor = Cursors.WaitCursor;
+            List<DataGridViewRow> selected_rows = new List<DataGridViewRow>();
+
+            //Getting all the selected visits
+            foreach (DataGridViewRow dr in FarmerVisits.Rows)
+            {
+                if (Convert.ToBoolean(dr.Cells[0].Value))
+                {
+                    if (Convert.ToBoolean(dr.Cells[3].Value))
+                    {
+                        if (dr.Cells[4].Value.ToString() != "Approved")
+                        {
+                            selected_rows.Add(dr);
+                        }
+                        else
+                        {
+                            MessageBox.Show("The visit under " + dr.Cells[1].Value.ToString() + " was already approved and there is nothing more to approve of the visit.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("The visit under " + dr.Cells[1].Value.ToString() + " has not yet been filled . Hence there is nothing to merge");
+                    }
+                }
+            }
+
+
+            if (selected_rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in selected_rows)
+                {
+                    bool approved = await Handlers.Update(Env.live_url + "/Approve_visit/" + row.Cells[10].Value.ToString() + "/" , new { });
+                    if (!approved)
+                    {
+                        MessageBox.Show("An error occured during the approval of the visit");
+                    }
+
+                }
+
+                MessageBox.Show("All selected visit(s) approved sucessfully");
+                Regenerate();
+            }
+            else
+            {
+                MessageBox.Show("No rows were selected");
+            }
+
+            Cursor = Cursors.Default;
+
+
         }
     }
 }
