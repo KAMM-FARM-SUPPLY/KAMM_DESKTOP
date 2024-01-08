@@ -40,6 +40,9 @@
     <Compile Update="UI\Overview.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UI\Payment\CreatePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="UI\Products.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -35,3 +35,4 @@ C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\
 C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.Visits.resources
 C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.LoanVisitsForms.VisitProfile.resources
 C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.LoanVisitsForms.CreateVisit.resources
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.Payment.CreatePayment.resources

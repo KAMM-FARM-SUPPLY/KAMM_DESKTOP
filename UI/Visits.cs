@@ -131,6 +131,8 @@ namespace KAMM_FARM_SERVICES.UI
 
             panel18.Height = panel19.Height = panel15.Height;
 
+           
+
         }
 
         private async void Visits_Load(object sender, EventArgs e)
