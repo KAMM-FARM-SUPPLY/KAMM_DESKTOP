@@ -15,9 +15,11 @@ namespace KAMM_FARM_SERVICES.UI.Payment
 {
     public partial class CreatePayment : Form
     {
-        public CreatePayment()
+        Repayments repayment;
+        public CreatePayment(Repayments repayments)
         {
             InitializeComponent();
+            this.repayment = repayments;
         }
 
         bool valid_application_id = false;
@@ -73,6 +75,7 @@ namespace KAMM_FARM_SERVICES.UI.Payment
                 if (result)
                 {
                     MessageBox.Show("Balance payment added successfully");
+                    this.repayment.Regenerate();
                 }
                 else
                 {

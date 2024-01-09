@@ -535,6 +535,6 @@
         private Label label13;
         private Label label12;
         private Label label11;
-        private Label Name;
+        private new Label Name;
     }
 }

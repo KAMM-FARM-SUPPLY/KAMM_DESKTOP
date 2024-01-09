@@ -32,8 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.amount_symbol = new System.Windows.Forms.Label();
+            this.amount = new MaterialSkin.Controls.MaterialTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.application_id = new MaterialSkin.Controls.MaterialTextBox();
@@ -118,8 +118,8 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.label11);
-            this.panel9.Controls.Add(this.materialTextBox1);
+            this.panel9.Controls.Add(this.amount_symbol);
+            this.panel9.Controls.Add(this.amount);
             this.panel9.Controls.Add(this.label6);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 487);
@@ -127,35 +127,37 @@
             this.panel9.Size = new System.Drawing.Size(298, 81);
             this.panel9.TabIndex = 6;
             // 
-            // label11
+            // amount_symbol
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(279, 3);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(19, 21);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "X";
+            this.amount_symbol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.amount_symbol.AutoSize = true;
+            this.amount_symbol.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.amount_symbol.ForeColor = System.Drawing.Color.White;
+            this.amount_symbol.Location = new System.Drawing.Point(279, 3);
+            this.amount_symbol.Name = "amount_symbol";
+            this.amount_symbol.Size = new System.Drawing.Size(21, 21);
+            this.amount_symbol.TabIndex = 27;
+            this.amount_symbol.Text = "=";
+            this.amount_symbol.Click += new System.EventHandler(this.amount_symbol_Click);
             // 
-            // materialTextBox1
+            // amount
             // 
-            this.materialTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.materialTextBox1.AnimateReadOnly = false;
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox1.LeadingIcon = null;
-            this.materialTextBox1.Location = new System.Drawing.Point(99, 22);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(178, 50);
-            this.materialTextBox1.TabIndex = 26;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.TrailingIcon = null;
+            this.amount.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.amount.AnimateReadOnly = false;
+            this.amount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.amount.Depth = 0;
+            this.amount.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.amount.LeadingIcon = null;
+            this.amount.Location = new System.Drawing.Point(99, 22);
+            this.amount.MaxLength = 50;
+            this.amount.MouseState = MaterialSkin.MouseState.OUT;
+            this.amount.Multiline = false;
+            this.amount.Name = "amount";
+            this.amount.Size = new System.Drawing.Size(178, 50);
+            this.amount.TabIndex = 26;
+            this.amount.Text = "";
+            this.amount.TrailingIcon = null;
+            this.amount.TextChanged += new System.EventHandler(this.amount_TextChanged);
             // 
             // label6
             // 
@@ -197,6 +199,7 @@
             this.application_id.TabIndex = 27;
             this.application_id.Text = "";
             this.application_id.TrailingIcon = null;
+            this.application_id.TextChanged += new System.EventHandler(this.application_id_TextChanged);
             // 
             // label5
             // 
@@ -230,13 +233,13 @@
             this.farmer_cb.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.farmer_cb.ForeColor = System.Drawing.Color.White;
             this.farmer_cb.FormattingEnabled = true;
-            this.farmer_cb.Items.AddRange(new object[] {
-            "Unapproved",
-            "Approved"});
             this.farmer_cb.Location = new System.Drawing.Point(102, 23);
             this.farmer_cb.Name = "farmer_cb";
             this.farmer_cb.Size = new System.Drawing.Size(178, 33);
             this.farmer_cb.TabIndex = 24;
+            this.farmer_cb.SelectedIndexChanged += new System.EventHandler(this.district_cb_TextChanged);
+            this.farmer_cb.TextUpdate += new System.EventHandler(this.district_cb_TextChanged);
+            this.farmer_cb.TextChanged += new System.EventHandler(this.district_cb_TextChanged);
             // 
             // label4
             // 
@@ -270,13 +273,13 @@
             this.village_cb.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.village_cb.ForeColor = System.Drawing.Color.White;
             this.village_cb.FormattingEnabled = true;
-            this.village_cb.Items.AddRange(new object[] {
-            "Unapproved",
-            "Approved"});
             this.village_cb.Location = new System.Drawing.Point(102, 27);
             this.village_cb.Name = "village_cb";
             this.village_cb.Size = new System.Drawing.Size(178, 33);
             this.village_cb.TabIndex = 24;
+            this.village_cb.SelectedIndexChanged += new System.EventHandler(this.district_cb_TextChanged);
+            this.village_cb.TextUpdate += new System.EventHandler(this.district_cb_TextChanged);
+            this.village_cb.TextChanged += new System.EventHandler(this.district_cb_TextChanged);
             // 
             // label3
             // 
@@ -310,13 +313,13 @@
             this.subcounty_cb.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.subcounty_cb.ForeColor = System.Drawing.Color.White;
             this.subcounty_cb.FormattingEnabled = true;
-            this.subcounty_cb.Items.AddRange(new object[] {
-            "Unapproved",
-            "Approved"});
             this.subcounty_cb.Location = new System.Drawing.Point(102, 26);
             this.subcounty_cb.Name = "subcounty_cb";
             this.subcounty_cb.Size = new System.Drawing.Size(178, 33);
             this.subcounty_cb.TabIndex = 24;
+            this.subcounty_cb.SelectedIndexChanged += new System.EventHandler(this.subcounty_cb_SelectedIndexChanged);
+            this.subcounty_cb.TextUpdate += new System.EventHandler(this.district_cb_TextChanged);
+            this.subcounty_cb.TextChanged += new System.EventHandler(this.district_cb_TextChanged);
             // 
             // label2
             // 
@@ -350,13 +353,13 @@
             this.district_cb.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.district_cb.ForeColor = System.Drawing.Color.White;
             this.district_cb.FormattingEnabled = true;
-            this.district_cb.Items.AddRange(new object[] {
-            "Unapproved",
-            "Approved"});
             this.district_cb.Location = new System.Drawing.Point(102, 27);
             this.district_cb.Name = "district_cb";
             this.district_cb.Size = new System.Drawing.Size(178, 33);
             this.district_cb.TabIndex = 24;
+            this.district_cb.SelectedIndexChanged += new System.EventHandler(this.district_cb_SelectedIndexChanged);
+            this.district_cb.TextUpdate += new System.EventHandler(this.district_cb_TextChanged);
+            this.district_cb.TextChanged += new System.EventHandler(this.district_cb_TextChanged);
             // 
             // label1
             // 
@@ -677,6 +680,7 @@
             this.label7.Size = new System.Drawing.Size(19, 21);
             this.label7.TabIndex = 20;
             this.label7.Text = "X";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // panel19
             // 
@@ -717,6 +721,7 @@
             // 
             // panel20
             // 
+            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel20.Location = new System.Drawing.Point(302, 537);
             this.panel20.Name = "panel20";
@@ -737,6 +742,7 @@
             this.Name = "Repayments";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Repayments";
+            this.Load += new System.EventHandler(this.Repayments_Load);
             this.panel1.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
@@ -798,9 +804,9 @@
         private Label label23;
         private Panel panel8;
         private Panel panel9;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin.Controls.MaterialTextBox amount;
         private Label label6;
-        private Label label11;
+        private Label amount_symbol;
         private MaterialSkin.Controls.MaterialTextBox application_id;
         private Panel panel10;
         private Panel panel12;

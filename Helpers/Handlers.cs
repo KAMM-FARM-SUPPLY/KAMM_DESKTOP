@@ -23,7 +23,6 @@ namespace KAMM_FARM_SERVICES.Helpers
                 {
                     dynamic response_content = await response.Content.ReadAsStringAsync();
                     dynamic deserialized = JsonConvert.DeserializeObject(response_content);
-                    //MessageBox.Show(deserialized.ToString());
                     return deserialized;
                 }
                 else
