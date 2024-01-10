@@ -36,18 +36,18 @@ namespace KAMM_FARM_SERVICES.UI.Payment
             {
                 dynamic profile = await Handlers.Fetch(Env.live_url + "/Queryapplications?lazy_load=False&id=" + Loanapplication_id);
 
-                if (profile != null && (profile.Count > 0))
+                if (profile != null && (profile["items"].Count > 0))
                 {
-                    Name.Text = profile[0].farmer.Name + " " + profile[0].farmer.Given_name;
+                    Name.Text = profile["items"][0].farmer.Name + " " + profile["items"][0].farmer.Given_name;
 
-                    phone.Text = profile[0].farmer.Phone_number.ToString();
+                    phone.Text = profile["items"][0].farmer.Phone_number.ToString();
 
-                    total.Text = profile[0].Total_cost.ToString();
-                    balance.Text = profile[0].Balance.ToString();
+                    total.Text = "shs." + profile["items"][0].Total_cost.ToString("N0");
+                    balance.Text = "shs." + profile["items"][0].Balance.ToString("N0");
 
-                    profile_pic.Image = await ImageProcesser.create_img(profile[0].Active_picture.ToString(), profile_pic.Size);
+                    profile_pic.Image = await ImageProcesser.create_img(profile["items"][0].Active_picture.ToString(), profile_pic.Size);
 
-                    signature.Image = await ImageProcesser.create_img(profile[0].Signature.ToString(), signature.Size);
+                    signature.Image = await ImageProcesser.create_img(profile["items"][0].Signature.ToString(), signature.Size);
 
                     valid_application_id = true;
                         

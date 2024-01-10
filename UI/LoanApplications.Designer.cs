@@ -54,6 +54,11 @@
             this.panel19 = new System.Windows.Forms.Panel();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.panel18 = new System.Windows.Forms.Panel();
+            this.panel28 = new System.Windows.Forms.Panel();
+            this.materialButton5 = new MaterialSkin.Controls.MaterialButton();
+            this.panel27 = new System.Windows.Forms.Panel();
+            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
+            this.panel26 = new System.Windows.Forms.Panel();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.panel17 = new System.Windows.Forms.Panel();
             this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
@@ -77,6 +82,17 @@
             this.Am_lbl = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.LoanApps = new KAMM_FARM_SERVICES.Components.DGV();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.bala = new System.Windows.Forms.Label();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.previous_page = new System.Windows.Forms.Label();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.page = new System.Windows.Forms.Label();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.next_page = new System.Windows.Forms.Label();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.total = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -88,6 +104,9 @@
             this.panel16.SuspendLayout();
             this.panel19.SuspendLayout();
             this.panel18.SuspendLayout();
+            this.panel28.SuspendLayout();
+            this.panel27.SuspendLayout();
+            this.panel26.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel15.SuspendLayout();
@@ -97,6 +116,12 @@
             this.panel11.SuspendLayout();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LoanApps)).BeginInit();
+            this.panel20.SuspendLayout();
+            this.panel25.SuspendLayout();
+            this.panel24.SuspendLayout();
+            this.panel23.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.panel21.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -336,7 +361,7 @@
             this.status_cb.ForeColor = System.Drawing.Color.White;
             this.status_cb.FormattingEnabled = true;
             this.status_cb.Items.AddRange(new object[] {
-            "Unapproved",
+            "Pending",
             "Approved",
             "Disbursed"});
             this.status_cb.Location = new System.Drawing.Point(99, 29);
@@ -415,13 +440,86 @@
             // 
             // panel18
             // 
-            this.panel18.Controls.Add(this.materialButton2);
+            this.panel18.Controls.Add(this.panel28);
+            this.panel18.Controls.Add(this.panel27);
+            this.panel18.Controls.Add(this.panel26);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel18.Location = new System.Drawing.Point(0, 79);
             this.panel18.Name = "panel18";
-            this.panel18.Padding = new System.Windows.Forms.Padding(5);
             this.panel18.Size = new System.Drawing.Size(291, 42);
             this.panel18.TabIndex = 24;
+            // 
+            // panel28
+            // 
+            this.panel28.Controls.Add(this.materialButton5);
+            this.panel28.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel28.Location = new System.Drawing.Point(191, 0);
+            this.panel28.Name = "panel28";
+            this.panel28.Padding = new System.Windows.Forms.Padding(4);
+            this.panel28.Size = new System.Drawing.Size(100, 42);
+            this.panel28.TabIndex = 2;
+            // 
+            // materialButton5
+            // 
+            this.materialButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton5.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton5.Depth = 0;
+            this.materialButton5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialButton5.HighEmphasis = true;
+            this.materialButton5.Icon = null;
+            this.materialButton5.Location = new System.Drawing.Point(4, 4);
+            this.materialButton5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton5.Name = "materialButton5";
+            this.materialButton5.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton5.Size = new System.Drawing.Size(92, 34);
+            this.materialButton5.TabIndex = 0;
+            this.materialButton5.Text = "Stale";
+            this.materialButton5.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton5.UseAccentColor = false;
+            this.materialButton5.UseVisualStyleBackColor = true;
+            this.materialButton5.Click += new System.EventHandler(this.materialButton5_Click);
+            // 
+            // panel27
+            // 
+            this.panel27.Controls.Add(this.materialButton3);
+            this.panel27.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel27.Location = new System.Drawing.Point(98, 0);
+            this.panel27.Name = "panel27";
+            this.panel27.Padding = new System.Windows.Forms.Padding(4);
+            this.panel27.Size = new System.Drawing.Size(93, 42);
+            this.panel27.TabIndex = 1;
+            // 
+            // materialButton3
+            // 
+            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton3.Depth = 0;
+            this.materialButton3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialButton3.HighEmphasis = true;
+            this.materialButton3.Icon = null;
+            this.materialButton3.Location = new System.Drawing.Point(4, 4);
+            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton3.Name = "materialButton3";
+            this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton3.Size = new System.Drawing.Size(85, 34);
+            this.materialButton3.TabIndex = 0;
+            this.materialButton3.Text = "Disburse";
+            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton3.UseAccentColor = false;
+            this.materialButton3.UseVisualStyleBackColor = true;
+            this.materialButton3.Click += new System.EventHandler(this.materialButton3_Click);
+            // 
+            // panel26
+            // 
+            this.panel26.Controls.Add(this.materialButton2);
+            this.panel26.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel26.Location = new System.Drawing.Point(0, 0);
+            this.panel26.Name = "panel26";
+            this.panel26.Padding = new System.Windows.Forms.Padding(4);
+            this.panel26.Size = new System.Drawing.Size(98, 42);
+            this.panel26.TabIndex = 0;
             // 
             // materialButton2
             // 
@@ -431,17 +529,18 @@
             this.materialButton2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(5, 5);
+            this.materialButton2.Location = new System.Drawing.Point(4, 4);
             this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
             this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(281, 32);
-            this.materialButton2.TabIndex = 20;
+            this.materialButton2.Size = new System.Drawing.Size(90, 34);
+            this.materialButton2.TabIndex = 0;
             this.materialButton2.Text = "Approve";
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton2.UseAccentColor = false;
             this.materialButton2.UseVisualStyleBackColor = true;
+            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click_1);
             // 
             // panel17
             // 
@@ -703,10 +802,10 @@
             // 
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel9.Controls.Add(this.LoanApps);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(299, 169);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(801, 402);
+            this.panel9.Size = new System.Drawing.Size(801, 365);
             this.panel9.TabIndex = 2;
             // 
             // LoanApps
@@ -734,9 +833,132 @@
             this.LoanApps.RowHeadersVisible = false;
             this.LoanApps.RowTemplate.Height = 35;
             this.LoanApps.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.LoanApps.Size = new System.Drawing.Size(797, 398);
+            this.LoanApps.Size = new System.Drawing.Size(797, 361);
             this.LoanApps.TabIndex = 28;
             this.LoanApps.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LoanApps_CellClick);
+            // 
+            // panel20
+            // 
+            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.panel20.Controls.Add(this.panel25);
+            this.panel20.Controls.Add(this.panel24);
+            this.panel20.Controls.Add(this.panel23);
+            this.panel20.Controls.Add(this.panel22);
+            this.panel20.Controls.Add(this.panel21);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel20.Location = new System.Drawing.Point(299, 534);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(801, 37);
+            this.panel20.TabIndex = 3;
+            // 
+            // panel25
+            // 
+            this.panel25.Controls.Add(this.bala);
+            this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel25.Location = new System.Drawing.Point(310, 0);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(319, 37);
+            this.panel25.TabIndex = 4;
+            // 
+            // bala
+            // 
+            this.bala.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bala.AutoSize = true;
+            this.bala.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
+            this.bala.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bala.ForeColor = System.Drawing.Color.Silver;
+            this.bala.Location = new System.Drawing.Point(17, 8);
+            this.bala.Name = "bala";
+            this.bala.Size = new System.Drawing.Size(283, 21);
+            this.bala.TabIndex = 22;
+            this.bala.Text = "Balance : Shs. 600,000 / Shs.12,000,000";
+            // 
+            // panel24
+            // 
+            this.panel24.Controls.Add(this.previous_page);
+            this.panel24.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel24.Location = new System.Drawing.Point(629, 0);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(44, 37);
+            this.panel24.TabIndex = 3;
+            // 
+            // previous_page
+            // 
+            this.previous_page.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.previous_page.AutoSize = true;
+            this.previous_page.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.previous_page.ForeColor = System.Drawing.Color.White;
+            this.previous_page.Location = new System.Drawing.Point(12, 8);
+            this.previous_page.Name = "previous_page";
+            this.previous_page.Size = new System.Drawing.Size(21, 21);
+            this.previous_page.TabIndex = 23;
+            this.previous_page.Text = "<";
+            this.previous_page.Click += new System.EventHandler(this.previous_page_Click);
+            // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.page);
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel23.Location = new System.Drawing.Point(673, 0);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(92, 37);
+            this.panel23.TabIndex = 2;
+            // 
+            // page
+            // 
+            this.page.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.page.AutoSize = true;
+            this.page.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.page.ForeColor = System.Drawing.Color.White;
+            this.page.Location = new System.Drawing.Point(5, 8);
+            this.page.Name = "page";
+            this.page.Size = new System.Drawing.Size(82, 21);
+            this.page.TabIndex = 22;
+            this.page.Text = "1 of 2 (10)";
+            // 
+            // panel22
+            // 
+            this.panel22.Controls.Add(this.next_page);
+            this.panel22.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel22.Location = new System.Drawing.Point(765, 0);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(36, 37);
+            this.panel22.TabIndex = 1;
+            // 
+            // next_page
+            // 
+            this.next_page.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.next_page.AutoSize = true;
+            this.next_page.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.next_page.ForeColor = System.Drawing.Color.White;
+            this.next_page.Location = new System.Drawing.Point(8, 8);
+            this.next_page.Name = "next_page";
+            this.next_page.Size = new System.Drawing.Size(21, 21);
+            this.next_page.TabIndex = 22;
+            this.next_page.Text = ">";
+            this.next_page.Click += new System.EventHandler(this.next_page_Click);
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.total);
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel21.Location = new System.Drawing.Point(0, 0);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(310, 37);
+            this.panel21.TabIndex = 0;
+            // 
+            // total
+            // 
+            this.total.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.total.AutoSize = true;
+            this.total.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
+            this.total.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.total.ForeColor = System.Drawing.Color.Silver;
+            this.total.Location = new System.Drawing.Point(6, 8);
+            this.total.Name = "total";
+            this.total.Size = new System.Drawing.Size(286, 21);
+            this.total.TabIndex = 21;
+            this.total.Text = "Amount : Shs. 600,000 / Shs.12,000,000";
             // 
             // LoanApplications
             // 
@@ -744,6 +966,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1100, 571);
+            this.Controls.Add(this.panel20);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -771,7 +994,12 @@
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
             this.panel18.ResumeLayout(false);
-            this.panel18.PerformLayout();
+            this.panel28.ResumeLayout(false);
+            this.panel28.PerformLayout();
+            this.panel27.ResumeLayout(false);
+            this.panel27.PerformLayout();
+            this.panel26.ResumeLayout(false);
+            this.panel26.PerformLayout();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
             this.panel13.ResumeLayout(false);
@@ -786,6 +1014,17 @@
             this.panel11.PerformLayout();
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LoanApps)).EndInit();
+            this.panel20.ResumeLayout(false);
+            this.panel25.ResumeLayout(false);
+            this.panel25.PerformLayout();
+            this.panel24.ResumeLayout(false);
+            this.panel24.PerformLayout();
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -835,9 +1074,25 @@
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private Label label11;
         private MaterialSkin.Controls.MaterialButton materialButton4;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
         private Panel panel19;
         private Panel panel18;
         private Panel panel17;
+        private Panel panel20;
+        private Panel panel24;
+        private Panel panel23;
+        private Panel panel22;
+        private Panel panel21;
+        private Label total;
+        private Label previous_page;
+        private Label page;
+        private Label next_page;
+        private Panel panel25;
+        private Label bala;
+        private Panel panel28;
+        private MaterialSkin.Controls.MaterialButton materialButton5;
+        private Panel panel27;
+        private MaterialSkin.Controls.MaterialButton materialButton3;
+        private Panel panel26;
+        private MaterialSkin.Controls.MaterialButton materialButton2;
     }
 }

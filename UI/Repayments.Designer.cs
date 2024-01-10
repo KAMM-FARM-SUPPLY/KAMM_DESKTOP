@@ -77,6 +77,14 @@
             this.panel19 = new System.Windows.Forms.Panel();
             this.Rep_DGV = new KAMM_FARM_SERVICES.Components.DGV();
             this.panel20 = new System.Windows.Forms.Panel();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.total = new System.Windows.Forms.Label();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.previous_page = new System.Windows.Forms.Label();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.page = new System.Windows.Forms.Label();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.next_page = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -97,6 +105,11 @@
             this.panel11.SuspendLayout();
             this.panel19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Rep_DGV)).BeginInit();
+            this.panel20.SuspendLayout();
+            this.panel24.SuspendLayout();
+            this.panel23.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.panel21.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -721,12 +734,103 @@
             // 
             // panel20
             // 
-            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.panel20.Controls.Add(this.panel24);
+            this.panel20.Controls.Add(this.panel23);
+            this.panel20.Controls.Add(this.panel22);
+            this.panel20.Controls.Add(this.panel21);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel20.Location = new System.Drawing.Point(302, 537);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(798, 34);
             this.panel20.TabIndex = 3;
+            // 
+            // panel24
+            // 
+            this.panel24.Controls.Add(this.total);
+            this.panel24.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel24.Location = new System.Drawing.Point(0, 0);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(338, 34);
+            this.panel24.TabIndex = 3;
+            // 
+            // total
+            // 
+            this.total.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.total.AutoSize = true;
+            this.total.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
+            this.total.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.total.ForeColor = System.Drawing.Color.Silver;
+            this.total.Location = new System.Drawing.Point(41, 7);
+            this.total.Name = "total";
+            this.total.Size = new System.Drawing.Size(213, 21);
+            this.total.TabIndex = 20;
+            this.total.Text = "Total Payments : Shs. 600,000";
+            // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.previous_page);
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel23.Location = new System.Drawing.Point(624, 0);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(39, 34);
+            this.panel23.TabIndex = 2;
+            // 
+            // previous_page
+            // 
+            this.previous_page.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.previous_page.AutoSize = true;
+            this.previous_page.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.previous_page.ForeColor = System.Drawing.Color.White;
+            this.previous_page.Location = new System.Drawing.Point(9, 7);
+            this.previous_page.Name = "previous_page";
+            this.previous_page.Size = new System.Drawing.Size(21, 21);
+            this.previous_page.TabIndex = 22;
+            this.previous_page.Text = "<";
+            this.previous_page.Click += new System.EventHandler(this.previous_page_Click);
+            // 
+            // panel22
+            // 
+            this.panel22.Controls.Add(this.page);
+            this.panel22.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel22.Location = new System.Drawing.Point(663, 0);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(100, 34);
+            this.panel22.TabIndex = 1;
+            // 
+            // page
+            // 
+            this.page.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.page.AutoSize = true;
+            this.page.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.page.ForeColor = System.Drawing.Color.White;
+            this.page.Location = new System.Drawing.Point(10, 7);
+            this.page.Name = "page";
+            this.page.Size = new System.Drawing.Size(82, 21);
+            this.page.TabIndex = 21;
+            this.page.Text = "1 of 2 (10)";
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.next_page);
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel21.Location = new System.Drawing.Point(763, 0);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(35, 34);
+            this.panel21.TabIndex = 0;
+            // 
+            // next_page
+            // 
+            this.next_page.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.next_page.AutoSize = true;
+            this.next_page.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.next_page.ForeColor = System.Drawing.Color.White;
+            this.next_page.Location = new System.Drawing.Point(8, 7);
+            this.next_page.Name = "next_page";
+            this.next_page.Size = new System.Drawing.Size(21, 21);
+            this.next_page.TabIndex = 21;
+            this.next_page.Text = ">";
+            this.next_page.Click += new System.EventHandler(this.next_page_Click);
             // 
             // Repayments
             // 
@@ -778,6 +882,15 @@
             this.panel11.PerformLayout();
             this.panel19.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Rep_DGV)).EndInit();
+            this.panel20.ResumeLayout(false);
+            this.panel24.ResumeLayout(false);
+            this.panel24.PerformLayout();
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -831,5 +944,13 @@
         private Panel panel19;
         private Panel panel20;
         private Components.DGV Rep_DGV;
+        private Panel panel24;
+        private Label total;
+        private Panel panel23;
+        private Label previous_page;
+        private Panel panel22;
+        private Label page;
+        private Panel panel21;
+        private Label next_page;
     }
 }

@@ -26,7 +26,8 @@ namespace KAMM_FARM_SERVICES.UI
             InitializeComponent();
 
             LoanDT.Columns.Add("Select" , typeof(bool));
-            LoanDT.Columns.Add("Status", typeof(Image));
+            LoanDT.Columns.Add("Application id");
+            LoanDT.Columns.Add("Status");
             LoanDT.Columns.Add("Names");
             LoanDT.Columns.Add("Phone");
             LoanDT.Columns.Add("Total Amount");
@@ -37,6 +38,47 @@ namespace KAMM_FARM_SERVICES.UI
         }
 
 
+        public List<DataGridViewRow> Get_selectected_rows()
+        {
+            List<DataGridViewRow> selected_rows = new List<DataGridViewRow>();
+
+            //Getting all the selected visits
+            foreach (DataGridViewRow dr in LoanApps.Rows)
+            {
+                if (Convert.ToBoolean(dr.Cells[0].Value))
+                {
+                    selected_rows.Add(dr);
+                }
+            }
+
+            return selected_rows;
+
+        }
+
+        private string check_selection_integrity()
+        {
+            List<DataGridViewRow> selected_rows = Get_selectected_rows();
+
+            string current_selection = selected_rows[0].Cells[2].Value.ToString();
+
+            foreach(DataGridViewRow dr in selected_rows)
+            {
+                if (current_selection == dr.Cells[2].Value.ToString())
+                {
+                    current_selection = dr.Cells[2].Value.ToString();
+                }
+                else
+                {
+                    return null;
+                }
+            }
+
+            
+
+            return current_selection;
+        }
+
+
         private void populate_LoanDT(dynamic LoanApplications)
         {
             current_Loan_applications = LoanApplications;
@@ -44,14 +86,12 @@ namespace KAMM_FARM_SERVICES.UI
             LoanDT.Rows.Clear();
             if (LoanApplications != null)
             {
-                foreach (dynamic dt in LoanApplications)
+                foreach (dynamic dt in LoanApplications["items"])
                 {
                     LoanDT.Rows.Add(
                         false,
-                        bool.Parse(Convert.ToString(dt.Active)) ?
-                        (Properties.Resources.tasks) :
-                        (Properties.Resources.hour_glass),
-
+                        dt.id,
+                        dt.Status,
                         dt.Name + " " + dt.Given_name,
                         dt.farmer.Phone_number,
                         dt.Total_cost,
@@ -61,11 +101,22 @@ namespace KAMM_FARM_SERVICES.UI
                         dt.Date_added
                         );
 
+
                 }
 
                 LoanApps.DataSource = LoanDT;
+
+                //Populating pagination
+                total.Text = "Amount : shs. " + current_Loan_applications["meta_data"].query_total_amount.ToString("N0") + " / " + current_Loan_applications["meta_data"].Total_amount.ToString("N0");
+                bala.Text = "Balance : shs. " + current_Loan_applications["meta_data"].query_total_balance.ToString("N0") + " / " + current_Loan_applications["meta_data"].Total_balance.ToString("N0");
+
+                previous_page.Text = ((current_Loan_applications["pagination"].previous != null) ? ("<") : (""));
+                next_page.Text = ((current_Loan_applications["pagination"].next != null) ? (">") : (""));
+
+                page.Text = current_Loan_applications["pagination"].page + " of " + current_Loan_applications["pagination"].pages + " " + "(" + current_Loan_applications["pagination"].count + ")";
+
             }
-            
+
         }
 
         public int convert_to_id(string name)
@@ -84,9 +135,9 @@ namespace KAMM_FARM_SERVICES.UI
         }
 
 
-        public async void Regenerate()
+        public async void Regenerate(bool previous_page = false , bool next_page = false)
         {
-
+            Cursor = Cursors.WaitCursor;
             LoanApplicationsDAL app = new LoanApplicationsDAL();
             dynamic results = await app.QueryFarmerLoans(
                     false,
@@ -100,11 +151,16 @@ namespace KAMM_FARM_SERVICES.UI
                     ((Amount.Text.Trim() == "")?(""):(Am_lbl.Text)),
                     Amount.Text.Trim(),
                     ((Balance.Text.Trim()=="")?(""):(BL.Text)),
-                    Balance.Text.Trim()
-
+                    Balance.Text.Trim(),
+                    (previous_page || next_page),
+                    
+                    ((previous_page|| next_page) ? ((previous_page) ? (Convert.ToInt32(current_Loan_applications["pagination"].previous)) : (Convert.ToInt32(current_Loan_applications["pagination"].next))) : (0))
                 );
 
             populate_LoanDT(results);
+
+            Cursor = Cursors.Default;
+
 
         }
 
@@ -127,21 +183,29 @@ namespace KAMM_FARM_SERVICES.UI
             panel11.Height = panel12.Height = Convert.ToInt32(0.5 * panel2.Height);
 
 
-            panel13.Width = Convert.ToInt32(0.85 * panel10.Width);
+            panel13.Width = Convert.ToInt32(0.78 * panel10.Width);
 
             panel14.Height = panel15.Height = panel11.Height;
 
-            panel16.Width = panel2.Width - (panel10.Width + panel13.Width);
+            panel16.Width = (panel2.Width - (panel10.Width + panel13.Width)) + Convert.ToInt32(0.04 * panel2.Width);
 
             panel17.Height = panel18.Height = panel19.Height = Convert.ToInt32(0.85 * panel16.Height)/3;
 
+
+            panel9.Height = Convert.ToInt32(0.68 * this.Height);
+
+            panel20.Height = this.Height - (panel9.Height + panel2.Height);
+
+
+            panel26.Width = panel27.Width = panel28.Width = (panel18.Width / 3);
         }
 
         private async void LoanApplications_Load(object sender, EventArgs e)
         {
 
             LoanApplicationsDAL LA = new LoanApplicationsDAL();
-            dynamic results = await LA.FetchFarmerLoans(0 , false);
+            dynamic results = await Handlers.Fetch(Env.live_url + "/Queryapplications?lazy_load=False");
+            //dynamic results = await LA.FetchFarmerLoans(0 , false);
             if (results != null)
             {
                 populate_LoanDT(results);
@@ -367,11 +431,11 @@ namespace KAMM_FARM_SERVICES.UI
         {
             if (e.RowIndex >= 0 && !(e.RowIndex == current_Loan_applications.Count) && !(e.ColumnIndex == 0))
             {
-                LoanApplicationProfile profile = new LoanApplicationProfile(current_Loan_applications[e.RowIndex]);
+                LoanApplicationProfile profile = new LoanApplicationProfile(current_Loan_applications["items"][e.RowIndex]);
                 profile.Show(); 
 
             }
-
+            
 
             
         }
@@ -379,37 +443,131 @@ namespace KAMM_FARM_SERVICES.UI
         private async void materialButton1_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
-            List<DataGridViewRow> selected_rows = new List<DataGridViewRow>();
+            List<DataGridViewRow> selected_rows = Get_selectected_rows();
 
-            //Getting all the selected visits
-            foreach (DataGridViewRow dr in LoanApps.Rows)
-            {
-                if (Convert.ToBoolean(dr.Cells[0].Value))
-                {
-                    selected_rows.Add(dr);
-                }
-            }
+            
+
+            Cursor = Cursors.Default;
+        }
+
+        private void previous_page_Click(object sender, EventArgs e)
+        {
+            Regenerate(true, false);
+
+        }
+
+        private void next_page_Click(object sender, EventArgs e)
+        {
+            Regenerate(false, true);
+        }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void materialButton2_Click_1(object sender, EventArgs e)
+        {
 
 
-            if (selected_rows.Count > 0)
+            Cursor = Cursors.WaitCursor;
+            List<DataGridViewRow> selected_rows = Get_selectected_rows();
+
+            string selection_integrity = check_selection_integrity();
+
+            if ((selected_rows.Count > 0) && (selection_integrity == "Pending"))
             {
                 foreach (DataGridViewRow row in selected_rows)
                 {
-                    bool deleted = await Handlers.Delete(Env.live_url + "/Delete_visit/" + row.Cells[10].Value.ToString() + "/");
-                    if (!deleted)
-                    {
-                        MessageBox.Show("An error occured during deletion");
-                    }
+                    int application_id = Convert.ToInt32(row.Cells[1].Value);
+                    string Status = "Approved";
+
+                    bool result = await Handlers.Update(Env.live_url + "/Change_status", new { application_id, Status });
+
 
                 }
 
-                MessageBox.Show("All selected visit(s) deleted sucessfully");
+                MessageBox.Show("Approved successfully");
                 Regenerate();
+
             }
             else
             {
-                MessageBox.Show("No rows were selected");
+                MessageBox.Show("No rows selected match the specified criteria . ");
             }
+
+
+
+
+            Cursor = Cursors.Default;
+
+        }
+
+        private async void materialButton3_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            List<DataGridViewRow> selected_rows = Get_selectected_rows();
+
+            string selection_integrity = check_selection_integrity();
+
+            if ((selected_rows.Count > 0) && (selection_integrity == "Approved"))
+            {
+                foreach (DataGridViewRow row in selected_rows)
+                {
+                    int application_id = Convert.ToInt32(row.Cells[1].Value);
+                    string Status = "Disbursed";
+
+                    bool result = await Handlers.Update(Env.live_url + "/Change_status", new { application_id, Status });
+
+
+                }
+
+                MessageBox.Show("Disbursed successfully");
+                Regenerate();
+
+            }
+            else
+            {
+                MessageBox.Show("No rows selected match the specified criteria . ");
+            }
+
+
+
+
+            Cursor = Cursors.Default;
+        }
+
+        private async void materialButton5_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            List<DataGridViewRow> selected_rows = Get_selectected_rows();
+
+            string selection_integrity = check_selection_integrity();
+
+            if ((selected_rows.Count > 0) && ((selection_integrity == "Approved") || (selection_integrity == "Disbursed")))
+            {
+                foreach (DataGridViewRow row in selected_rows)
+                {
+                    int application_id = Convert.ToInt32(row.Cells[1].Value);
+                    string Status = "Pending";
+
+                    bool result = await Handlers.Update(Env.live_url + "/Change_status", new { application_id, Status });
+
+
+                }
+
+                MessageBox.Show("Staled successfully");
+                Regenerate();
+
+            }
+            else
+            {
+                MessageBox.Show("No rows selected match the specified criteria . ");
+            }
+
+
+
+
             Cursor = Cursors.Default;
         }
     }

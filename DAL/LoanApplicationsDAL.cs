@@ -69,7 +69,9 @@ namespace KAMM_FARM_SERVICES.DAL
             string amount_symbol="",
             string amount="",
             string balance_symbol="",
-            string balance=""
+            string balance="",
+            bool page_action = false,
+            int page = 0
             )
         {
             try
@@ -87,7 +89,9 @@ namespace KAMM_FARM_SERVICES.DAL
                     ((amount_symbol != "") ? ("amount_symbol=" + amount_symbol + "&") : ("")) +
                     ((amount != "") ? ("amount=" + amount + "&") : ("")) +
                     ((balance_symbol != "") ? ("balance_symbol=" + balance_symbol + "&") : ("")) +
-                    ((balance != "") ? ("balance=" + balance + "&") : ("")) 
+                    ((balance != "") ? ("balance=" + balance + "&") : ("")) +
+                    ((page_action && (page != 0)) ? ("page=" + page + "&") : ("")) 
+
                     ;
 
                 //var stringPayload = JsonConvert.SerializeObject(productprop);

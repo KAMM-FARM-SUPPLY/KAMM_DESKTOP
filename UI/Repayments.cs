@@ -75,6 +75,7 @@ namespace KAMM_FARM_SERVICES.UI
             payments_dt.Rows.Clear();
             if (payments != null)
             {
+                int total_amount = 0; 
                 foreach (dynamic payment in payments["items"])
                 {
                     payments_dt.Rows.Add(
@@ -89,10 +90,23 @@ namespace KAMM_FARM_SERVICES.UI
                         payment.date_added
 
                    );
+
+
+                    //int temp_am;
+                    //bool is_num = int.TryParse(payment.amount , out temp_am);
+
+                    //total_amount += (is_num?(temp_am):(0));
+
+                    total_amount += Convert.ToInt32(payment.amount);
                 }
                 Rep_DGV.DataSource = payments_dt;
 
-                //Rep_DGV.Columns[10].Visible = false;
+                //Populating pagination
+                total.Text = "Total Payments : shs. " + total_amount.ToString("N0");
+                previous_page.Text = ((payments["pagination"].previous != null) ? ("<") : (""));
+                next_page.Text = ((payments["pagination"].next != null) ? (">") : (""));
+
+                page.Text = payments["pagination"].page + " of " + payments["pagination"].pages + " " + "(" + payments["pagination"].count + ")";
 
 
             }
@@ -120,8 +134,10 @@ namespace KAMM_FARM_SERVICES.UI
             return 0;
         }
 
-        public async void Regenerate()
+        public async void Regenerate(bool next_page = false , bool previous_page = false)
         {
+            Cursor = Cursors.WaitCursor;
+
             string derived_uri = Env.live_url + "/Get_payments?lazy_load=False&" +
                     ((farmer_cb.Text.Trim() != "") ? ("farmer=" + convert_to_id(farmer_cb.Text) + "&") : ("")) +
                     ((status_cb.Text.Trim() != "") ? ("status=" + status_cb.Text + "&") : ("")) +
@@ -132,13 +148,16 @@ namespace KAMM_FARM_SERVICES.UI
                     ((label7.Text == "?") ? ("End_date=" + dateTimePicker2.Value.AddDays(-1).ToString("yyyy-MM-dd HH:mm:ss") + "&") : ("")) +
                     ((amount.Text.Trim() != "") ? ("amount_symbol=" + amount_symbol.Text + "&") : ("")) +
                     ((amount.Text.Trim() != "") ? ("amount=" + amount.Text + "&") : ("")) +
-                    ((application_id.Text.Trim() != "") ? ("application_id=" + application_id.Text + "&") : (""))
-
+                    ((application_id.Text.Trim() != "") ? ("application_id=" + application_id.Text + "&") : ("")) +
+                    ((next_page && (current_payments["pagination"].next != null))?("page=" + current_payments["pagination"].next + "&") : ("")) +
+                    ((previous_page && (current_payments["pagination"].previous != null)) ? ("page=" + current_payments["pagination"].previous + "&") : (""))
                     ;
 
             dynamic payments = await Handlers.Fetch(derived_uri);
 
             populateDGV(payments);
+
+            Cursor = Cursors.Default;
 
 
         }
@@ -309,6 +328,16 @@ namespace KAMM_FARM_SERVICES.UI
         private void amount_TextChanged(object sender, EventArgs e)
         {
             Regenerate();
+        }
+
+        private void previous_page_Click(object sender, EventArgs e)
+        {
+            Regenerate(false , true);
+        }
+
+        private void next_page_Click(object sender, EventArgs e)
+        {
+            Regenerate(true, false);
         }
     }
 }

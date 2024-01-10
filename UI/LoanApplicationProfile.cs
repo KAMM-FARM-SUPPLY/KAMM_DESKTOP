@@ -57,7 +57,7 @@ namespace KAMM_FARM_SERVICES.UI
             // The profile information
             Name.Text = Convert.ToString(LoanApplicationInfo.farmer.Name) + " " + Convert.ToString(LoanApplicationInfo.farmer.Given_name);
             phone.Text = Convert.ToString(LoanApplicationInfo.farmer.Phone_number);
-            status.Text = Convert.ToString(LoanApplicationInfo.Active);
+            status.Text = Convert.ToString(LoanApplicationInfo.Status);
             Total_land.Text = Convert.ToString(LoanApplicationInfo.farmer.Total_land_acreage);
             coffee_acreage.Text = Convert.ToString(LoanApplicationInfo.farmer.Coffee_acreage);
             coffee_trees.Text = Convert.ToString(LoanApplicationInfo.farmer.No_of_trees);
@@ -95,7 +95,7 @@ namespace KAMM_FARM_SERVICES.UI
 
                 );
             }
-            label1.Text = "Total Amount : " + LoanApplicationInfo.Total_cost;
+            label1.Text = "Total Amount : shs. " + LoanApplicationInfo.Total_cost.ToString("N0");
             products.DataSource = products_dt;
 
             // Loading Payments
@@ -115,7 +115,7 @@ namespace KAMM_FARM_SERVICES.UI
 
                 );
             }
-            label3.Text = "Total Balance Due : " + LoanApplicationInfo.Balance;
+            label3.Text = "Total Balance Due : shs. " + LoanApplicationInfo.Balance.ToString("N0");
             payments.DataSource = payments_dt;
 
             Collateral_bx.Image = await ImageProcesser.create_img(LoanApplicationInfo.Collateral[0].collateral_image.ToString(), Collateral_bx.Size);
