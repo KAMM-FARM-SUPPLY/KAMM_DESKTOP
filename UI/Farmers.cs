@@ -366,5 +366,10 @@ namespace KAMM_FARM_SERVICES.UI
 
             panel6.Width = Form1.PnlContainer.Width - (panel3.Width * 3);
         }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

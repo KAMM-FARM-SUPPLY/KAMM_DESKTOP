@@ -177,18 +177,7 @@ namespace KAMM_FARM_SERVICES.UI
             village_cb.DisplayMember = "name";
             village_cb.ValueMember = "id";
 
-            //Load Farmers
-            FarmersDAL Farmer = new FarmersDAL();
-            farmers = await Farmer.Fetch();
-
-            foreach (dynamic farmer in farmers)
-            {
-                var Name = Convert.ToString(farmer.Name) + " " + Convert.ToString(farmer.Given_name);
-
-                farmer_cb.Items.Add(Name);
-            }
-            //farmer_cb.DisplayMember = "Name";
-            //farmer_cb.ValueMember = "id";
+            
 
 
         }
@@ -379,6 +368,35 @@ namespace KAMM_FARM_SERVICES.UI
             Cursor = Cursors.Default;
 
 
+        }
+
+        private async void farmer_cb_TextChanged(object sender, EventArgs e)
+        {
+            if (farmer_cb.Text.Trim() != "")
+            {
+                farmers = await Handlers.Fetch(Env.live_url + "/GetFarmers/?name_search=" + farmer_cb.Text.Trim());
+
+                if (farmers != null)
+                {
+
+                    List<string> collectedList = new List<string> { };
+
+                    foreach (dynamic farmer in farmers["items"])
+                    {
+                        var Name = Convert.ToString(farmer.Name) + " " + Convert.ToString(farmer.Given_name);
+
+                        farmer_cb.Items.Add(Name);
+
+                    }
+
+                }
+
+            }
+            else
+            {
+                farmer_cb.Items.Clear();
+                Regenerate();
+            }
         }
     }
 }

@@ -79,14 +79,14 @@ namespace KAMM_FARM_SERVICES
 
             this.panel3.Controls.Clear();
             //registrationForm FrmDashboard_Vrb = new registrationForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            Farmers form = new Farmers() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FarmersView form = new FarmersView() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             form.FormBorderStyle = FormBorderStyle.None;
             this.panel3.Controls.Add(form);
             form.Show();
             btnFarmers.BackColor = Color.FromArgb(24, 30, 54);
 
 
-            FarmersScreen = form;
+            //FarmersScreen = form;
 
         }
 

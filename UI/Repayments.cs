@@ -84,9 +84,9 @@ namespace KAMM_FARM_SERVICES.UI
                         payment.application_id.farmer.Name + " "  + payment.application_id.farmer.Given_name,
                         payment.application_id.farmer.Phone_number,
                         payment.extra_info,
-                        payment.amount,
-                        payment.application_id.Total_cost,
-                        payment.application_id.Balance,
+                        "shs. " + payment.amount.ToString("N0"),
+                        "shs. " + payment.application_id.Total_cost.ToString("N0"),
+                        "shs. " + payment.application_id.Balance.ToString("N0"),
                         payment.date_added
 
                    );
@@ -198,18 +198,7 @@ namespace KAMM_FARM_SERVICES.UI
             village_cb.DisplayMember = "name";
             village_cb.ValueMember = "id";
 
-            //Load Farmers
-            FarmersDAL Farmer = new FarmersDAL();
-            farmers = await Farmer.Fetch();
-
-            foreach (dynamic farmer in farmers)
-            {
-                
-                var Name = Convert.ToString(farmer.Name) + " " + Convert.ToString(farmer.Given_name);
-
-                farmer_cb.Items.Add(Name);
-            }
-
+            
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -338,6 +327,35 @@ namespace KAMM_FARM_SERVICES.UI
         private void next_page_Click(object sender, EventArgs e)
         {
             Regenerate(true, false);
+        }
+
+        private async void farmer_cb_TextChanged(object sender, EventArgs e)
+        {
+            if (farmer_cb.Text.Trim() != "")
+            {
+                farmers = await Handlers.Fetch(Env.live_url + "/GetFarmers/?name_search=" + farmer_cb.Text.Trim());
+
+                if (farmers != null)
+                {
+
+                    List<string> collectedList = new List<string> { };
+
+                    foreach (dynamic farmer in farmers["items"])
+                    {
+                        var Name = Convert.ToString(farmer.Name) + " " + Convert.ToString(farmer.Given_name);
+
+                        farmer_cb.Items.Add(Name);
+
+                    }
+
+                }
+
+            }
+            else
+            {
+                farmer_cb.Items.Clear();
+                Regenerate();
+            }
         }
     }
 }

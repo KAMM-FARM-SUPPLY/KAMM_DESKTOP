@@ -190,7 +190,7 @@
             // farmer_cb
             // 
             this.farmer_cb.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.farmer_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.farmer_cb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.farmer_cb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.farmer_cb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
             this.farmer_cb.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -201,9 +201,8 @@
             this.farmer_cb.Name = "farmer_cb";
             this.farmer_cb.Size = new System.Drawing.Size(178, 33);
             this.farmer_cb.TabIndex = 24;
-            this.farmer_cb.SelectedIndexChanged += new System.EventHandler(this.farmer_cb_SelectedIndexChanged);
-            this.farmer_cb.TextUpdate += new System.EventHandler(this.village_cb_SelectedIndexChanged);
-            this.farmer_cb.Validated += new System.EventHandler(this.village_cb_SelectedIndexChanged);
+            this.farmer_cb.SelectedIndexChanged += new System.EventHandler(this.village_cb_SelectedIndexChanged);
+            this.farmer_cb.TextChanged += new System.EventHandler(this.farmer_cb_TextUpdate);
             // 
             // label4
             // 
@@ -1040,7 +1039,6 @@
         private Panel panel8;
         private ComboBox field_officer_cb;
         private Panel panel7;
-        private ComboBox farmer_cb;
         private Panel panel6;
         private ComboBox village_cb;
         private Panel panel5;
@@ -1094,5 +1092,6 @@
         private MaterialSkin.Controls.MaterialButton materialButton3;
         private Panel panel26;
         private MaterialSkin.Controls.MaterialButton materialButton2;
+        private ComboBox farmer_cb;
     }
 }
