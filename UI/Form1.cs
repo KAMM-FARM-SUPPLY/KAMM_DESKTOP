@@ -216,5 +216,21 @@ namespace KAMM_FARM_SERVICES
             form.Show();
             button4.BackColor = Color.FromArgb(24, 30, 54);
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            button6.BackColor = Color.FromArgb(46, 51, 73);
+            panel4.Height = button6.Height;
+            panel4.Top = button6.Top;
+            panel4.Left = button6.Left;
+
+            this.panel3.Controls.Clear();
+            frmExpenditure form = new frmExpenditure() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            form.FormBorderStyle = FormBorderStyle.None;
+            this.panel3.Controls.Add(form);
+            form.Show();
+            button6.BackColor = Color.FromArgb(24, 30, 54);
+
+        }
     }
 }

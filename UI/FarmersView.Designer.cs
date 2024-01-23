@@ -84,6 +84,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.FarmersDGV = new KAMM_FARM_SERVICES.Components.DGV();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.previous_page = new System.Windows.Forms.Label();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.page = new System.Windows.Forms.Label();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.next_page = new System.Windows.Forms.Label();
+            this.total = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -103,6 +110,10 @@
             this.panel15.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FarmersDGV)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.panel21.SuspendLayout();
+            this.panel20.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -145,6 +156,7 @@
             this.coffee_production_symbol.Size = new System.Drawing.Size(21, 21);
             this.coffee_production_symbol.TabIndex = 26;
             this.coffee_production_symbol.Text = "<";
+            this.coffee_production_symbol.Click += new System.EventHandler(this.coffee_production_symbol_Click);
             // 
             // coffee_production
             // 
@@ -162,6 +174,7 @@
             this.coffee_production.TabIndex = 25;
             this.coffee_production.Text = "";
             this.coffee_production.TrailingIcon = null;
+            this.coffee_production.TextChanged += new System.EventHandler(this.land_acreage_TextChanged);
             // 
             // label8
             // 
@@ -198,6 +211,7 @@
             this.unproductive_symbol.Size = new System.Drawing.Size(21, 21);
             this.unproductive_symbol.TabIndex = 26;
             this.unproductive_symbol.Text = "<";
+            this.unproductive_symbol.Click += new System.EventHandler(this.unproductive_symbol_Click);
             // 
             // unproductive
             // 
@@ -215,6 +229,7 @@
             this.unproductive.TabIndex = 25;
             this.unproductive.Text = "";
             this.unproductive.TrailingIcon = null;
+            this.unproductive.TextChanged += new System.EventHandler(this.land_acreage_TextChanged);
             // 
             // label7
             // 
@@ -251,6 +266,7 @@
             this.trees_cb.Size = new System.Drawing.Size(21, 21);
             this.trees_cb.TabIndex = 26;
             this.trees_cb.Text = "<";
+            this.trees_cb.Click += new System.EventHandler(this.trees_cb_Click);
             // 
             // trees
             // 
@@ -268,6 +284,7 @@
             this.trees.TabIndex = 25;
             this.trees.Text = "";
             this.trees.TrailingIcon = null;
+            this.trees.TextChanged += new System.EventHandler(this.land_acreage_TextChanged);
             // 
             // label6
             // 
@@ -304,6 +321,7 @@
             this.coffee_acreage_symbol.Size = new System.Drawing.Size(21, 21);
             this.coffee_acreage_symbol.TabIndex = 26;
             this.coffee_acreage_symbol.Text = "<";
+            this.coffee_acreage_symbol.Click += new System.EventHandler(this.coffee_acreage_symbol_Click);
             // 
             // coffee_acreage
             // 
@@ -321,6 +339,7 @@
             this.coffee_acreage.TabIndex = 25;
             this.coffee_acreage.Text = "";
             this.coffee_acreage.TrailingIcon = null;
+            this.coffee_acreage.TextChanged += new System.EventHandler(this.land_acreage_TextChanged);
             // 
             // label5
             // 
@@ -357,6 +376,7 @@
             this.land_acreage_symbol.Size = new System.Drawing.Size(21, 21);
             this.land_acreage_symbol.TabIndex = 24;
             this.land_acreage_symbol.Text = "<";
+            this.land_acreage_symbol.Click += new System.EventHandler(this.land_acreage_symbol_Click);
             // 
             // land_acreage
             // 
@@ -374,6 +394,7 @@
             this.land_acreage.TabIndex = 23;
             this.land_acreage.Text = "";
             this.land_acreage.TrailingIcon = null;
+            this.land_acreage.TextChanged += new System.EventHandler(this.land_acreage_TextChanged);
             // 
             // label4
             // 
@@ -411,6 +432,9 @@
             this.village_cb.Name = "village_cb";
             this.village_cb.Size = new System.Drawing.Size(178, 33);
             this.village_cb.TabIndex = 22;
+            this.village_cb.SelectedIndexChanged += new System.EventHandler(this.village_cb_SelectedIndexChanged);
+            this.village_cb.TextUpdate += new System.EventHandler(this.village_cb_SelectedIndexChanged);
+            this.village_cb.TextChanged += new System.EventHandler(this.village_cb_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -448,6 +472,9 @@
             this.subcounty_cb.Name = "subcounty_cb";
             this.subcounty_cb.Size = new System.Drawing.Size(178, 33);
             this.subcounty_cb.TabIndex = 22;
+            this.subcounty_cb.SelectedIndexChanged += new System.EventHandler(this.subcounty_cb_SelectedIndexChanged);
+            this.subcounty_cb.TextUpdate += new System.EventHandler(this.village_cb_SelectedIndexChanged);
+            this.subcounty_cb.TextChanged += new System.EventHandler(this.village_cb_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -485,6 +512,9 @@
             this.district_cb.Name = "district_cb";
             this.district_cb.Size = new System.Drawing.Size(178, 33);
             this.district_cb.TabIndex = 22;
+            this.district_cb.SelectedIndexChanged += new System.EventHandler(this.district_cb_SelectedIndexChanged);
+            this.district_cb.TextUpdate += new System.EventHandler(this.village_cb_SelectedIndexChanged);
+            this.district_cb.TextChanged += new System.EventHandler(this.village_cb_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -707,6 +737,7 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 23);
             this.dateTimePicker2.TabIndex = 17;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.village_cb_SelectedIndexChanged);
             // 
             // panel15
             // 
@@ -731,6 +762,7 @@
             this.label11.Size = new System.Drawing.Size(19, 21);
             this.label11.TabIndex = 19;
             this.label11.Text = "X";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label9
             // 
@@ -751,6 +783,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
             this.dateTimePicker1.TabIndex = 17;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.village_cb_SelectedIndexChanged);
             // 
             // panel3
             // 
@@ -758,7 +791,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(321, 170);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(779, 355);
+            this.panel3.Size = new System.Drawing.Size(779, 359);
             this.panel3.TabIndex = 2;
             // 
             // FarmersDGV
@@ -786,17 +819,99 @@
             this.FarmersDGV.RowHeadersVisible = false;
             this.FarmersDGV.RowTemplate.Height = 35;
             this.FarmersDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.FarmersDGV.Size = new System.Drawing.Size(779, 355);
+            this.FarmersDGV.Size = new System.Drawing.Size(779, 359);
             this.FarmersDGV.TabIndex = 29;
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.panel4.Controls.Add(this.panel22);
+            this.panel4.Controls.Add(this.panel21);
+            this.panel4.Controls.Add(this.panel20);
+            this.panel4.Controls.Add(this.total);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(321, 525);
+            this.panel4.Location = new System.Drawing.Point(321, 529);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(779, 46);
+            this.panel4.Size = new System.Drawing.Size(779, 42);
             this.panel4.TabIndex = 3;
+            // 
+            // panel22
+            // 
+            this.panel22.Controls.Add(this.previous_page);
+            this.panel22.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel22.Location = new System.Drawing.Point(565, 0);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(52, 42);
+            this.panel22.TabIndex = 24;
+            // 
+            // previous_page
+            // 
+            this.previous_page.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.previous_page.AutoSize = true;
+            this.previous_page.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.previous_page.ForeColor = System.Drawing.Color.White;
+            this.previous_page.Location = new System.Drawing.Point(16, 11);
+            this.previous_page.Name = "previous_page";
+            this.previous_page.Size = new System.Drawing.Size(21, 21);
+            this.previous_page.TabIndex = 23;
+            this.previous_page.Text = "<";
+            this.previous_page.Click += new System.EventHandler(this.previous_page_Click);
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.page);
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel21.Location = new System.Drawing.Point(617, 0);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(112, 42);
+            this.panel21.TabIndex = 23;
+            // 
+            // page
+            // 
+            this.page.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.page.AutoSize = true;
+            this.page.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.page.ForeColor = System.Drawing.Color.White;
+            this.page.Location = new System.Drawing.Point(15, 11);
+            this.page.Name = "page";
+            this.page.Size = new System.Drawing.Size(82, 21);
+            this.page.TabIndex = 22;
+            this.page.Text = "1 of 2 (10)";
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.next_page);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel20.Location = new System.Drawing.Point(729, 0);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(50, 42);
+            this.panel20.TabIndex = 22;
+            // 
+            // next_page
+            // 
+            this.next_page.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.next_page.AutoSize = true;
+            this.next_page.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.next_page.ForeColor = System.Drawing.Color.White;
+            this.next_page.Location = new System.Drawing.Point(15, 11);
+            this.next_page.Name = "next_page";
+            this.next_page.Size = new System.Drawing.Size(21, 21);
+            this.next_page.TabIndex = 22;
+            this.next_page.Text = ">";
+            this.next_page.Click += new System.EventHandler(this.next_page_Click);
+            // 
+            // total
+            // 
+            this.total.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.total.AutoSize = true;
+            this.total.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
+            this.total.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.total.ForeColor = System.Drawing.Color.Silver;
+            this.total.Location = new System.Drawing.Point(24, 14);
+            this.total.Name = "total";
+            this.total.Size = new System.Drawing.Size(144, 21);
+            this.total.TabIndex = 21;
+            this.total.Text = "PROFILES :  32/500";
             // 
             // FarmersView
             // 
@@ -846,6 +961,14 @@
             this.panel15.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.FarmersDGV)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -906,5 +1029,12 @@
         private Label label14;
         private Label Am_lbl;
         private Components.DGV FarmersDGV;
+        private Label total;
+        private Panel panel22;
+        private Panel panel21;
+        private Panel panel20;
+        private Label page;
+        private Label previous_page;
+        private Label next_page;
     }
 }

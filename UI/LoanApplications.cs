@@ -122,7 +122,7 @@ namespace KAMM_FARM_SERVICES.UI
         public int convert_to_id(string name)
         {
 
-            if (name.Trim() == "")
+            if (name.Trim() != "")
             {
                 foreach (dynamic farmer in farmers["items"])
                 {
