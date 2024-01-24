@@ -38,3 +38,5 @@ C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\
 C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.Payment.CreatePayment.resources
 C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.FarmersView.resources
 C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.frmExpenditure.resources
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.ExpenditureForms.AddExpenditure.resources
+C:\Users\SHANY\Desktop\KAMM-Desktop\KAMM FARM SERVICES\obj\Debug\net6.0-windows\KAMM_FARM_SERVICES.UI.ExpenditureForms.AddExpenditureCategory.resources
