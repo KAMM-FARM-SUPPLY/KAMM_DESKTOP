@@ -17,10 +17,17 @@ namespace KAMM_FARM_SERVICES.UI.ExpenditureForms
 
         DataTable dt = new DataTable();
 
+        frmExpenditure fexp;
+        AddExpenditure Aexp;
 
-        public AddExpenditureCategory(int overall_category)
+
+
+        public AddExpenditureCategory(int overall_category , frmExpenditure fexp , AddExpenditure Aexp)
         {
             InitializeComponent();
+
+            this.fexp = fexp;
+            this.Aexp = Aexp;
 
             ov_category = overall_category;
 
@@ -56,6 +63,12 @@ namespace KAMM_FARM_SERVICES.UI.ExpenditureForms
                 }
 
                 dgv1.DataSource = dt;
+
+                //Regenerating the data in the major expenditure form
+                fexp.Regenerate();
+
+                //Regenerating the data combobox data in the add expenditure form
+                Aexp.Regenerate();
             }
         }
 
