@@ -11,7 +11,7 @@ namespace KAMM_FARM_SERVICES.Helpers
     {
         static HttpClient client = new HttpClient();
 
-        public static async Task<dynamic> Fetch(string derived_uri)
+        public static async Task<dynamic> Fetch(string derived_uri , bool auto_convert = true)
         {
             try
             {
@@ -22,8 +22,16 @@ namespace KAMM_FARM_SERVICES.Helpers
                 if (response.IsSuccessStatusCode)
                 {
                     dynamic response_content = await response.Content.ReadAsStringAsync();
-                    dynamic deserialized = JsonConvert.DeserializeObject(response_content);
-                    return deserialized;
+                    if (auto_convert)
+                    {
+                        dynamic deserialized = JsonConvert.DeserializeObject(response_content);
+                        return deserialized;
+                    }
+                    else
+                    {
+                        return response_content;
+                    }
+                    
                 }
                 else
                 {

@@ -75,7 +75,7 @@ namespace KAMM_FARM_SERVICES.UI
 
         public int convert_to_id(string name)
         {
-            foreach (dynamic farmer in farmers)
+            foreach (dynamic farmer in farmers["items"])
             {
                 var Name = Convert.ToString(farmer.Name) + " " + Convert.ToString(farmer.Given_name);
 

@@ -51,6 +51,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -129,12 +130,12 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
+            this.button7.Image = global::KAMM_FARM_SERVICES.Properties.Resources.data_gathering__2_;
             this.button7.Location = new System.Drawing.Point(0, 461);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(212, 41);
             this.button7.TabIndex = 15;
-            this.button7.Text = "Collateral";
+            this.button7.Text = "Reports";
             this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button7.UseVisualStyleBackColor = true;
             // 
@@ -162,7 +163,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.Image = global::KAMM_FARM_SERVICES.Properties.Resources.expenses__1_;
             this.button6.Location = new System.Drawing.Point(0, 379);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(212, 41);
@@ -179,7 +180,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.Image = global::KAMM_FARM_SERVICES.Properties.Resources.paw;
             this.button5.Location = new System.Drawing.Point(0, 338);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(212, 41);
@@ -341,6 +342,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.materialButton1);
             this.panel5.Controls.Add(this.label1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(214, 0);
@@ -368,6 +370,24 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1116, 610);
             this.panel3.TabIndex = 6;
+            // 
+            // materialButton1
+            // 
+            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = global::KAMM_FARM_SERVICES.Properties.Resources.notification;
+            this.materialButton1.Location = new System.Drawing.Point(856, 30);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(192, 36);
+            this.materialButton1.TabIndex = 2;
+            this.materialButton1.Text = "Notifications (12/138)";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -420,5 +440,6 @@
         private Panel panel5;
         private Label label1;
         private Panel panel3;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
     }
 }

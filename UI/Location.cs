@@ -1,4 +1,8 @@
 ﻿using KAMM_FARM_SERVICES.DAL;
+using KAMM_FARM_SERVICES.Helpers;
+using KAMM_FARM_SERVICES.Schema.ExpendituresSchema;
+using KAMM_FARM_SERVICES.Schema.LocationSchema;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -82,11 +86,15 @@ namespace KAMM_FARM_SERVICES.UI
         {
             Organise_dts();
             LocationsDAL location = new LocationsDAL();
-            dynamic District_results = await location.Fetch();
+            dynamic District_results = await Handlers.Fetch(Env.live_url + "/Locations/" , false);
+
+
             ////Loading Districts
             if (District_results != null)
             {
-                foreach (dynamic item in District_results)
+                List<DistrictX> districts_info = JsonConvert.DeserializeObject<List<DistrictX>>(District_results);
+
+                foreach (DistrictX item in districts_info)
                 {
                     Districts.Rows.Add(item.id, item.name, item.more_info, item.subcounties.Count);
 
@@ -130,11 +138,23 @@ namespace KAMM_FARM_SERVICES.UI
                 int district_id = active_district_id = Convert.ToInt32(Districts.Rows[row][0].ToString());
                 //Fetching Subcounties
                 LocationsDAL location = new LocationsDAL();
-                dynamic county_results = await location.Fetch_subcounties(district_id);
+
+                string derived_uri = Env.live_url + "/Subcounty/";
+
+                if (district_id != 0)
+                {
+                    derived_uri = Env.live_url + "/Subcounty?district_id=" + district_id;
+                }
+
+                var county_results = await Handlers.Fetch(derived_uri, false);
+
+                List<SubcountyX> subcounty_info = JsonConvert.DeserializeObject<List<SubcountyX>>(county_results);
+
+                //dynamic county_results = await location.Fetch_subcounties(district_id);
                 //MessageBox.Show(county_results.ToString());
 
                 //Populating the subcounties
-                foreach(dynamic item in county_results)
+                foreach (SubcountyX item in subcounty_info)
                 {
                     Subcounties.Rows.Add(item.id, item.name, item.more_info, item.villages.Count);
                 }
@@ -164,11 +184,23 @@ namespace KAMM_FARM_SERVICES.UI
                 int county_id = active_county_id = Convert.ToInt32(Subcounties.Rows[row][0].ToString());
                 //Fetching Subcounties
                 LocationsDAL location = new LocationsDAL();
-                dynamic village_results = await location.Fetch_villages(county_id);
+                //dynamic village_results = await location.Fetch_villages(county_id);
                 //MessageBox.Show(county_results.ToString());
 
+                string derived_uri = Env.live_url + "/Villages";
+
+                if (county_id != 0)
+                {
+                    derived_uri = Env.live_url + "/Villages?County_id=" + county_id;
+                }
+
+                var villages_results = await Handlers.Fetch(derived_uri, false);
+
+                List<VillageX> village_info = JsonConvert.DeserializeObject<List<VillageX>>(villages_results);
+
+
                 //Populating the subcounties
-                foreach (dynamic item in village_results)
+                foreach (VillageX item in village_info)
                 {
                     Villages.Rows.Add(item.id, item.name, item.more_info);
                 }

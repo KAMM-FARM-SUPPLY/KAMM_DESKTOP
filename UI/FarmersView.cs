@@ -1,6 +1,8 @@
 ﻿using KAMM_FARM_SERVICES.Components;
 using KAMM_FARM_SERVICES.DAL;
 using KAMM_FARM_SERVICES.Helpers;
+using KAMM_FARM_SERVICES.Schema.FarmerSchema;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +20,7 @@ namespace KAMM_FARM_SERVICES.UI
 
         DataTable FarmersDt = new DataTable();
         dynamic Locations = null;
-        dynamic current_farmers = null;
+        FarmerX current_farmers = null;
 
         public FarmersView()
         {
@@ -68,14 +70,17 @@ namespace KAMM_FARM_SERVICES.UI
                     ((coffee_production.Text.Trim() != "") ? ("Ov_coffee_prod=" + coffee_production.Text + "&") : ("")) +
 
 
-                    ((next_page && (current_farmers["pagination"].next != null)) ? ("page=" + current_farmers["pagination"].next + "&") : ("")) +
-                    ((previous_page && (current_farmers["pagination"].previous != null)) ? ("page=" + current_farmers["pagination"].previous + "&") : (""))
+                    ((next_page && (current_farmers.pagination.next != null)) ? ("page=" + current_farmers.pagination.next + "&") : ("")) +
+                    ((previous_page && (current_farmers.pagination.previous != null)) ? ("page=" + current_farmers.pagination.previous + "&") : (""))
                     ;
 
-            dynamic results = await Handlers.Fetch(derived_uri);
+            dynamic results = await Handlers.Fetch(derived_uri , false);
 
             if (results != null)
             {
+                FarmerX farmer_info = JsonConvert.DeserializeObject<FarmerX>(results);
+
+
                 PopulateDGV(results);
             }
 
@@ -141,27 +146,27 @@ namespace KAMM_FARM_SERVICES.UI
         }
 
 
-        public void PopulateDGV(dynamic farmers_hold)
+        public void PopulateDGV(FarmerX farmers_hold)
         {
 
             current_farmers = farmers_hold;
 
             FarmersDt.Rows.Clear();
-            for (int i = 0; i < farmers_hold["items"].Count; i++)
+            for (int i = 0; i < farmers_hold.items.Count; i++)
             {
                 FarmersDt.Rows.Add(
                     //true,
-                    farmers_hold["items"][i].Active,
+                    farmers_hold.items[i].Active,
                     //await ImageProcesser.create_img(farmers_hold[i].Profile_picture.ToString(), new Size(70, 70)),
-                    farmers_hold["items"][i].Name,
-                    farmers_hold["items"][i].Gender,
-                    farmers_hold["items"][i].Phone_number,
-                    farmers_hold["items"][i].NIN_no,
-                    farmers_hold["items"][i].Total_land_acreage,
-                    farmers_hold["items"][i].Coffee_acreage,
-                    farmers_hold["items"][i].No_of_trees,
-                    farmers_hold["items"][i].Unproductive_trees,
-                    farmers_hold["items"][i].Ov_coffee_prod
+                    farmers_hold.items[i].Name,
+                    farmers_hold.items[i].Gender,
+                    farmers_hold.items[i].Phone_number,
+                    farmers_hold.items[i].NIN_no,
+                    farmers_hold.items[i].Total_land_acreage,
+                    farmers_hold.items[i].Coffee_acreage,
+                    farmers_hold.items[i].No_of_trees,
+                    farmers_hold.items[i].Unproductive_trees,
+                    farmers_hold.items[i].Ov_coffee_prod
                     //await ImageProcesser.create_img(farmers_hold[i].Signature.ToString(), new Size(70, 70))
                     );
             }
@@ -169,18 +174,21 @@ namespace KAMM_FARM_SERVICES.UI
             FarmersDGV.DataSource = FarmersDt;
 
 
-            total.Text = "PROFILES : " + farmers_hold["meta_data"].query_total_farmers + " / " + farmers_hold["meta_data"].total_farmers;
+            total.Text = "PROFILES : " + farmers_hold.meta_data.query_total_farmers + " / " + farmers_hold.meta_data.total_farmers;
 
-            previous_page.Text = ((farmers_hold["pagination"].previous != null) ? ("<") : (""));
-            next_page.Text = ((farmers_hold["pagination"].next != null) ? (">") : (""));
+            previous_page.Text = ((farmers_hold.pagination.previous != null) ? ("<") : (""));
+            next_page.Text = ((farmers_hold.pagination.next != null) ? (">") : (""));
 
-            page.Text = farmers_hold["pagination"].page + " of " + farmers_hold["pagination"].pages + " " + "(" + farmers_hold["pagination"].count + ")";
+            page.Text = farmers_hold.pagination.page + " of " + farmers_hold.pagination.pages + " " + "(" + farmers_hold.pagination.count + ")";
 
         }
 
         private async void FarmersView_Load(object sender, EventArgs e)
         {
-            current_farmers = await Handlers.Fetch(Env.live_url + "/GetFarmers/");
+            var farmer_info = await Handlers.Fetch(Env.live_url + "/GetFarmers/" , false);
+
+            current_farmers = JsonConvert.DeserializeObject<FarmerX>(farmer_info);
+
 
             if (current_farmers != null)
             {

@@ -73,6 +73,26 @@ namespace KAMM_FARM_SERVICES.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap data_gathering {
+            get {
+                object obj = ResourceManager.GetObject("data-gathering", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap data_gathering__2_ {
+            get {
+                object obj = ResourceManager.GetObject("data-gathering (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delivered__1_ {
             get {
                 object obj = ResourceManager.GetObject("delivered__1_", resourceCulture);
@@ -93,9 +113,39 @@ namespace KAMM_FARM_SERVICES.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap expenses__1_ {
+            get {
+                object obj = ResourceManager.GetObject("expenses (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hour_glass {
             get {
                 object obj = ResourceManager.GetObject("hour_glass", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap notification {
+            get {
+                object obj = ResourceManager.GetObject("notification", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap paw {
+            get {
+                object obj = ResourceManager.GetObject("paw", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
