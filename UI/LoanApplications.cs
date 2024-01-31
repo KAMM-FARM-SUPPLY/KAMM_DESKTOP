@@ -456,6 +456,15 @@ namespace KAMM_FARM_SERVICES.UI
             Cursor = Cursors.WaitCursor;
             List<DataGridViewRow> selected_rows = Get_selectected_rows();
 
+            foreach(DataGridViewRow dr in selected_rows)
+            {
+                bool deleted = await Handlers.Delete(Env.live_url + "/Delete_application/" + dr.Cells[1].Value.ToString() + "/");
+                if (deleted)
+                {
+                    MessageBox.Show("Application id " + dr.Cells[1].Value.ToString() + " deleted successfully");
+                }
+            }
+
             
 
             Cursor = Cursors.Default;

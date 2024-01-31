@@ -431,7 +431,7 @@
             this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
             this.materialButton1.Size = new System.Drawing.Size(281, 38);
             this.materialButton1.TabIndex = 19;
-            this.materialButton1.Text = "Delete";
+            this.materialButton1.Text = "Move to trash";
             this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton1.UseAccentColor = false;
             this.materialButton1.UseVisualStyleBackColor = true;

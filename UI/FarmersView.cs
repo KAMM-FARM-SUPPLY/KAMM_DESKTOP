@@ -81,7 +81,7 @@ namespace KAMM_FARM_SERVICES.UI
                 FarmerX farmer_info = JsonConvert.DeserializeObject<FarmerX>(results);
 
 
-                PopulateDGV(results);
+                PopulateDGV(farmer_info);
             }
 
             Cursor = Cursors.Default;
@@ -137,6 +137,11 @@ namespace KAMM_FARM_SERVICES.UI
             panel3.Height = Convert.ToInt32(0.7 * this.Height);
 
             panel4.Height = this.Height - (panel2.Height + panel3.Height);
+
+
+            panel23.Width = panel2.Width - (panel14.Width + panel17.Width);
+
+            panel24.Height = panel25.Height = panel26.Height = (Convert.ToInt32(panel23.Height * 0.9)) / 3;
 
         }
 
