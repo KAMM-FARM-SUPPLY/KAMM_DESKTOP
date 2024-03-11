@@ -564,10 +564,14 @@
             this.status_cb.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.status_cb.ForeColor = System.Drawing.Color.White;
             this.status_cb.FormattingEnabled = true;
+            this.status_cb.Items.AddRange(new object[] {
+            "Active(True)",
+            "Inactive(False)"});
             this.status_cb.Location = new System.Drawing.Point(111, 7);
             this.status_cb.Name = "status_cb";
             this.status_cb.Size = new System.Drawing.Size(178, 33);
             this.status_cb.TabIndex = 22;
+            this.status_cb.SelectedIndexChanged += new System.EventHandler(this.status_cb_SelectedIndexChanged);
             // 
             // label23
             // 
@@ -643,6 +647,7 @@
             this.materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton4.UseAccentColor = false;
             this.materialButton4.UseVisualStyleBackColor = true;
+            this.materialButton4.Click += new System.EventHandler(this.materialButton4_Click);
             // 
             // panel27
             // 
@@ -673,6 +678,7 @@
             this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton3.UseAccentColor = false;
             this.materialButton3.UseVisualStyleBackColor = true;
+            this.materialButton3.Click += new System.EventHandler(this.materialButton3_Click);
             // 
             // panel25
             // 
@@ -841,6 +847,7 @@
             this.Amount.TabIndex = 16;
             this.Amount.Text = "";
             this.Amount.TrailingIcon = null;
+            this.Amount.TextChanged += new System.EventHandler(this.Amount_TextChanged);
             // 
             // label12
             // 
@@ -979,6 +986,7 @@
             this.FarmersDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.FarmersDGV.Size = new System.Drawing.Size(779, 359);
             this.FarmersDGV.TabIndex = 29;
+            this.FarmersDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FarmersDGV_CellClick);
             // 
             // panel4
             // 

@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label25 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -152,6 +152,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel2.SuspendLayout();
             this.panel21.SuspendLayout();
             this.panel20.SuspendLayout();
@@ -224,7 +225,7 @@
             this.panel21.Controls.Add(this.label40);
             this.panel21.Controls.Add(this.AnalysisPanel);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel21.Location = new System.Drawing.Point(951, 319);
+            this.panel21.Location = new System.Drawing.Point(951, 350);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(419, 396);
             this.panel21.TabIndex = 46;
@@ -237,15 +238,16 @@
             this.label40.ForeColor = System.Drawing.Color.White;
             this.label40.Location = new System.Drawing.Point(6, 9);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(220, 25);
+            this.label40.Size = new System.Drawing.Size(104, 25);
             this.label40.TabIndex = 61;
-            this.label40.Text = "LOAN DETAILS ANALYSIS";
+            this.label40.Text = "FARMER ID";
             // 
             // AnalysisPanel
             // 
             this.AnalysisPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.AnalysisPanel.Location = new System.Drawing.Point(0, 37);
             this.AnalysisPanel.Name = "AnalysisPanel";
+            this.AnalysisPanel.Padding = new System.Windows.Forms.Padding(4);
             this.AnalysisPanel.Size = new System.Drawing.Size(419, 359);
             this.AnalysisPanel.TabIndex = 0;
             // 
@@ -256,7 +258,7 @@
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel20.Location = new System.Drawing.Point(951, 0);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(419, 319);
+            this.panel20.Size = new System.Drawing.Size(419, 350);
             this.panel20.TabIndex = 45;
             // 
             // label39
@@ -265,7 +267,7 @@
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label39.ForeColor = System.Drawing.Color.White;
-            this.label39.Location = new System.Drawing.Point(15, 10);
+            this.label39.Location = new System.Drawing.Point(15, 41);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(168, 25);
             this.label39.TabIndex = 60;
@@ -275,7 +277,7 @@
             // 
             this.panel22.Controls.Add(this.chart1);
             this.panel22.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel22.Location = new System.Drawing.Point(0, 47);
+            this.panel22.Location = new System.Drawing.Point(0, 78);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(419, 272);
             this.panel22.TabIndex = 0;
@@ -284,36 +286,36 @@
             // 
             this.chart1.BackColor = System.Drawing.Color.Transparent;
             this.chart1.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            legend2.BorderColor = System.Drawing.Color.Black;
-            legend2.ForeColor = System.Drawing.Color.White;
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            legend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            legend1.BorderColor = System.Drawing.Color.Black;
+            legend1.ForeColor = System.Drawing.Color.White;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series5.Legend = "Legend1";
-            series5.Name = "Coffee acreage";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series6.Legend = "Legend1";
-            series6.Name = "Number of trees";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series7.Legend = "Legend1";
-            series7.Name = "Unproductive trees";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series8.Legend = "Legend1";
-            series8.Name = "Coffee Production";
-            this.chart1.Series.Add(series5);
-            this.chart1.Series.Add(series6);
-            this.chart1.Series.Add(series7);
-            this.chart1.Series.Add(series8);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Legend = "Legend1";
+            series1.Name = "Coffee acreage";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Legend = "Legend1";
+            series2.Name = "Number of trees";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Legend = "Legend1";
+            series3.Name = "Unproductive trees";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.Legend = "Legend1";
+            series4.Name = "Coffee Production";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(419, 272);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -342,22 +344,22 @@
             // 
             // LoanApplications
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            this.LoanApplications.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.LoanApplications.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.LoanApplications.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.LoanApplications.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.LoanApplications.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.LoanApplications.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.LoanApplications.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Nirmala UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.LoanApplications.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nirmala UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.LoanApplications.DefaultCellStyle = dataGridViewCellStyle2;
             this.LoanApplications.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LoanApplications.EnableHeadersVisualStyles = false;
             this.LoanApplications.Location = new System.Drawing.Point(0, 0);
@@ -400,22 +402,22 @@
             // 
             // active_loans
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            this.active_loans.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            this.active_loans.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.active_loans.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.active_loans.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.active_loans.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.active_loans.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.active_loans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Nirmala UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.active_loans.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Nirmala UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.active_loans.DefaultCellStyle = dataGridViewCellStyle4;
             this.active_loans.Dock = System.Windows.Forms.DockStyle.Fill;
             this.active_loans.EnableHeadersVisualStyles = false;
             this.active_loans.Location = new System.Drawing.Point(0, 0);
@@ -1687,6 +1689,19 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "KAMM_FARM_SERVICES.Reports.FarmersReports.FRID.FarmerID.rdlc";
+            this.reportViewer1.LocalReport.ReportPath = "";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "ReportViewer";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(396, 246);
+            this.reportViewer1.TabIndex = 0;
+            reportViewer1.LocalReport.EnableExternalImages = true; // Set to true or false as needed
+
+            // 
             // FarmerProfile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1860,5 +1875,6 @@
         private Label label39;
         private Panel panel22;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

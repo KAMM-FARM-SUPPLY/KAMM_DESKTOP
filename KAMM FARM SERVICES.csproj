@@ -10,10 +10,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Reports\FarmersReports\FRID\FarmerID.rdlc" />
+    <None Remove="Reports\SubReps\Report1.rdlc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\FarmersReports\FRID\FarmerID.rdlc" />
+    <EmbeddedResource Include="Reports\SubReps\Report1.rdlc" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MaterialSkin" Version="0.2.1" />
     <PackageReference Include="MaterialSkin.2" Version="2.3.1" />
     <PackageReference Include="MaterialSkin.Updated" Version="0.2.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="QRCoder" Version="1.4.3" />
+    <PackageReference Include="ReportViewerCore.WinForms" Version="15.1.19" />
     <PackageReference Include="WinForms.DataVisualization" Version="1.9.1" />
   </ItemGroup>
 
@@ -23,6 +35,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="Reports\FarmersReports\FRID\FarmerIDSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FarmerIDSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +47,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Reports\FarmersReports\FRID\FarmerIDSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FarmerIDSet.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>

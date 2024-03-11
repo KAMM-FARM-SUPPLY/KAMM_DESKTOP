@@ -138,7 +138,7 @@ namespace KAMM_FARM_SERVICES.UI
         {
             Cursor = Cursors.WaitCursor;
 
-            string derived_uri = Env.live_url + "/Get_payments?lazy_load=False&" +
+            string derived_uri = Env.live_url + "/Get_payments?lazy_load=false&" +
                     ((farmer_cb.Text.Trim() != "") ? ("farmer=" + convert_to_id(farmer_cb.Text) + "&") : ("")) +
                     ((status_cb.Text.Trim() != "") ? ("status=" + status_cb.Text + "&") : ("")) +
                     ((district_cb.Text.Trim() != "") ? ("District=" + district_cb.Text + "&") : ("")) +
@@ -165,7 +165,7 @@ namespace KAMM_FARM_SERVICES.UI
         private async void Repayments_Load(object sender, EventArgs e)
         {
 
-            dynamic payments = await Handlers.Fetch(Env.live_url + "/Get_payments?lazy_load=False");
+            dynamic payments = await Handlers.Fetch(Env.live_url + "/Get_payments?lazy_load=false");
 
             populateDGV(payments);
 

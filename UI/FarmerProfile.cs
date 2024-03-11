@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using KAMM_FARM_SERVICES.DAL;
 using KAMM_FARM_SERVICES.UI.LoanDetailsAnalysis;
+using Microsoft.Reporting.WinForms;
+using System.Net;
+
 
 namespace KAMM_FARM_SERVICES.UI
 {
@@ -74,13 +77,13 @@ namespace KAMM_FARM_SERVICES.UI
                     dts.Rows.Add(
                         applications[Overall_count - 1].Active,
                         applications[Overall_count - 1].Name,
-                        applications[Overall_count - 1].Total_cost,
+                        "Shs. " + applications[Overall_count - 1].Total_cost.ToString("N0"),
                         applications[Overall_count - 1].Products.Count,
                         applications[Overall_count - 1].Collateral.Count,
                         applications[Overall_count - 1].Date_added
                     );
 
-                    Load_Kin_info(applications[Overall_count - 1].Next_of_kin[0]);
+                    //Load_Kin_info(applications[Overall_count - 1].Next_of_kin[0]);
                 }
 
 
@@ -90,7 +93,7 @@ namespace KAMM_FARM_SERVICES.UI
                     dt.Rows.Add(
                         applications[i].Active,
                         applications[i].Name,
-                        applications[i].Total_cost,
+                        "Shs. " + applications[i].Total_cost.ToString("N0"),
                         applications[i].Products.Count,
                         applications[i].Collateral.Count,
                         applications[i].Date_added
@@ -165,6 +168,28 @@ namespace KAMM_FARM_SERVICES.UI
             this.Close();
         }
 
+        public static byte[] LoadImageFromUri(string uri)
+        {
+            try
+            {
+                // Create a WebClient to download the image
+                using (WebClient client = new WebClient())
+                {
+                    // Download the image from the URI
+                    byte[] imageData = client.DownloadData(uri);
+
+                    // Return the downloaded image data
+                    return imageData;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that may occur
+                Console.WriteLine($"Error loading image from URI: {ex.Message}");
+                return null; // Return null if there was an error
+            }
+        }
+
         private async void FarmerProfile_Load(object sender, EventArgs e)
         {
             //MessageBox.Show(profile.ToString());
@@ -187,7 +212,56 @@ namespace KAMM_FARM_SERVICES.UI
             pictureBox2.Image = await ImageProcesser.create_img(profile.Profile_picture.ToString() , new Size(214, 163));
             signature.Image = await ImageProcesser.create_img(profile.Signature.ToString() , new Size(70,70));
 
+            //this.reportViewer1 = new ReportViewer() { Dock = DockStyle.Fill};
+            this.AnalysisPanel.Controls.Add(this.reportViewer1);
 
+            DataTable reportdt = new DataTable();
+            reportdt.Columns.Add("ID");
+            reportdt.Columns.Add("Name");
+            reportdt.Columns.Add("District");
+            reportdt.Columns.Add("Subcounty");
+            reportdt.Columns.Add("Village");
+            reportdt.Columns.Add("date_added");
+            reportdt.Columns.Add("Profile_pic");
+            reportdt.Columns.Add("Signature");
+            reportdt.Columns.Add("QRCode");
+
+            reportdt.Rows.Add(
+                "1",
+                "Jukko Isaac",
+                "Masaka",
+                "Lwengo",
+                "Cell A",
+                "01,16,23",
+                profile.Profile_picture.ToString(),
+                profile.Signature.ToString(),
+                null
+            );
+
+            DataTable imageDT = new DataTable();
+            imageDT.Columns.Add("Profile_pic");
+            imageDT.Columns.Add("Signature");
+            imageDT.Columns.Add("QRCode");
+
+            //imageDT.Rows.Add(
+            //    LoadImageFromUri(profile.Profile_picture.ToString()),
+            //    null,
+            //    null
+            //);
+
+
+
+            this.reportViewer1.LocalReport.DataSources.Clear();
+
+            ReportDataSource reportDataSource = new ReportDataSource("FarmerInfo", reportdt); // "DataSet1" is the name of your dataset in the RDLC file
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource);
+            this.reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet2" , imageDT));
+
+
+            
+
+
+            this.reportViewer1.RefreshReport();
             FetchLoanApplications();
 
 

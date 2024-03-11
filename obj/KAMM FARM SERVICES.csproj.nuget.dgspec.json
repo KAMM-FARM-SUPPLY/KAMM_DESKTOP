@@ -60,6 +60,14 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
+            "QRCoder": {
+              "target": "Package",
+              "version": "[1.4.3, )"
+            },
+            "ReportViewerCore.WinForms": {
+              "target": "Package",
+              "version": "[15.1.19, )"
+            },
             "WinForms.DataVisualization": {
               "target": "Package",
               "version": "[1.9.1, )"

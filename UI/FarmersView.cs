@@ -26,7 +26,9 @@ namespace KAMM_FARM_SERVICES.UI
         {
             InitializeComponent();
 
-            FarmersDt.Columns.Add("Active", typeof(bool));
+            FarmersDt.Columns.Add("Select", typeof(bool));
+            FarmersDt.Columns.Add("Active", typeof(String));
+            FarmersDt.Columns.Add("ID", typeof(int));
             FarmersDt.Columns.Add("Name", typeof(String));
             FarmersDt.Columns.Add("Gender", typeof(String));
             FarmersDt.Columns.Add("Phone number", typeof(String));
@@ -45,7 +47,7 @@ namespace KAMM_FARM_SERVICES.UI
             Cursor = Cursors.WaitCursor;
 
             string derived_uri = Env.live_url + "/GetFarmers/?lazy_load=False&" +
-                    ((status_cb.Text.Trim() != "") ? ("status=" + status_cb.Text + "&") : ("")) +
+                    ((status_cb.Text.Trim() != "") ? ("status=" + (status_cb.Text == "Active(True)" ? ("true") : ("false")) + "&") : ("")) +
                     ((district_cb.Text.Trim() != "") ? ("District=" + district_cb.Text + "&") : ("")) +
                     ((subcounty_cb.Text.Trim() != "") ? ("Subcounty=" + subcounty_cb.Text + "&") : ("")) +
                     ((village_cb.Text.Trim() != "") ? ("Village=" + village_cb.Text + "&") : ("")) +
@@ -86,6 +88,46 @@ namespace KAMM_FARM_SERVICES.UI
 
             Cursor = Cursors.Default;
 
+        }
+
+        public List<DataGridViewRow> Get_selectected_rows()
+        {
+            List<DataGridViewRow> selected_rows = new List<DataGridViewRow>();
+
+            //Getting all the selected visits
+            foreach (DataGridViewRow dr in FarmersDGV.Rows)
+            {
+                if (Convert.ToBoolean(dr.Cells[0].Value))
+                {
+                    selected_rows.Add(dr);
+                }
+            }
+
+            return selected_rows;
+
+        }
+
+        private string check_selection_integrity()
+        {
+            List<DataGridViewRow> selected_rows = Get_selectected_rows();
+
+            string current_selection = selected_rows[0].Cells[1].Value.ToString();
+
+            foreach (DataGridViewRow dr in selected_rows)
+            {
+                if (current_selection == dr.Cells[1].Value.ToString())
+                {
+                    current_selection = dr.Cells[1].Value.ToString();
+                }
+                else
+                {
+                    return null;
+                }
+            }
+
+
+
+            return current_selection;
         }
 
         public string Shift_symbols(string symbol)
@@ -160,8 +202,9 @@ namespace KAMM_FARM_SERVICES.UI
             for (int i = 0; i < farmers_hold.items.Count; i++)
             {
                 FarmersDt.Rows.Add(
-                    //true,
-                    farmers_hold.items[i].Active,
+                    false,
+                    farmers_hold.items[i].Active.ToString(),
+                    farmers_hold.items[i].id,
                     //await ImageProcesser.create_img(farmers_hold[i].Profile_picture.ToString(), new Size(70, 70)),
                     farmers_hold.items[i].Name,
                     farmers_hold.items[i].Gender,
@@ -360,6 +403,110 @@ namespace KAMM_FARM_SERVICES.UI
         private void previous_page_Click(object sender, EventArgs e)
         {
             Regenerate(true, false);
+        }
+
+        private void Amount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void materialButton3_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            string selected = check_selection_integrity();
+            if (!Convert.ToBoolean(selected))
+            {
+
+                List<int> ids = new List<int> { };
+                foreach(DataGridViewRow dr in Get_selectected_rows())
+                {
+                    ids.Add(Convert.ToInt32(dr.Cells[2].Value));
+                }
+
+                bool status = true;
+
+                //int id = Convert.ToInt32(dr.Cells[2].Value);
+
+                bool updated = await Handlers.Update(Env.live_url + "/ChangeStatus/", new { ids, status });
+
+
+
+                if (updated)
+                {
+                    MessageBox.Show("All farmer profile(s) validated successfully");
+
+                    Regenerate();
+
+                }
+                else
+                {
+                    MessageBox.Show("An error occured . Contact the support team for more information");
+                }
+
+                
+
+            }
+            else
+            {
+                MessageBox.Show("The selection doesnt have consistent status to be updated");
+            }
+            Cursor = Cursors.Default;
+
+        }
+
+        private async void materialButton4_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            string selected = check_selection_integrity();
+            if (Convert.ToBoolean(selected))
+            {
+
+                List<int> ids = new List<int> { };
+                foreach (DataGridViewRow dr in Get_selectected_rows())
+                {
+                    ids.Add(Convert.ToInt32(dr.Cells[2].Value));
+                }
+
+                bool status = false;
+
+                //int id = Convert.ToInt32(dr.Cells[2].Value);
+
+                bool updated = await Handlers.Update(Env.live_url + "/ChangeStatus/", new { ids, status });
+
+
+
+                if (updated)
+                {
+                    MessageBox.Show("All farmer profile(s) deactivate successfully");
+
+                    Regenerate();
+
+                }
+                else
+                {
+                    MessageBox.Show("An error occured . Contact the support team for more information");
+                }
+
+
+
+            }
+            else
+            {
+                MessageBox.Show("The selection doesnt have consistent status to be updated");
+            }
+            Cursor = Cursors.Default;
+
+        }
+
+        private void status_cb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Regenerate();
+        }
+
+        private void FarmersDGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FarmerProfile profile = new FarmerProfile(current_farmers.items[e.RowIndex]);
+            profile.Show();
         }
     }
 }

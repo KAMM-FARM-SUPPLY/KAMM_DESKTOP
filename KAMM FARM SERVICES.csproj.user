@@ -4,6 +4,9 @@
     <Compile Update="Components\DGV.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Components\Reports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UI\ExpenditureForms\AddExpenditure.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,5 +67,10 @@
     <Compile Update="UI\Visits.cs">
       <SubType>Form</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Reports\FarmersReports\FRID\FarmerIDSet.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
 </Project>

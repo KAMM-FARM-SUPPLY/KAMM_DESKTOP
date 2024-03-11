@@ -60,7 +60,7 @@ namespace KAMM_FARM_SERVICES.DAL
         public static async Task<Image> create_img(string file , Size pic_size, bool circled = false)
         {
 
-            if (file != "")
+            if ((file != "") && (file != null))
             {
                 var wc = new WebClient();
                 try
